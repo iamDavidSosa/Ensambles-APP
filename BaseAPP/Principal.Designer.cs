@@ -48,12 +48,16 @@
             label4 = new Label();
             label3 = new Label();
             pictureBox3 = new PictureBox();
+            panel5 = new Panel();
+            label7 = new Label();
+            pnlPrincipal = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -292,7 +296,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.DarkGray;
-            label4.Location = new Point(77, 41);
+            label4.Location = new Point(77, 39);
             label4.Name = "label4";
             label4.Size = new Size(104, 20);
             label4.TabIndex = 6;
@@ -303,7 +307,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.DarkGray;
-            label3.Location = new Point(77, 18);
+            label3.Location = new Point(77, 16);
             label3.Name = "label3";
             label3.Size = new Size(114, 23);
             label3.TabIndex = 5;
@@ -319,12 +323,43 @@
             pictureBox3.TabIndex = 0;
             pictureBox3.TabStop = false;
             // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(15, 46, 70);
+            panel5.Controls.Add(label7);
+            panel5.Dock = DockStyle.Top;
+            panel5.Location = new Point(237, 47);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(843, 41);
+            panel5.TabIndex = 2;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.DarkGray;
+            label7.Location = new Point(6, 6);
+            label7.Name = "label7";
+            label7.Size = new Size(114, 28);
+            label7.TabIndex = 8;
+            label7.Text = "Dashboard";
+            // 
+            // pnlPrincipal
+            // 
+            pnlPrincipal.Dock = DockStyle.Fill;
+            pnlPrincipal.Location = new Point(237, 88);
+            pnlPrincipal.Name = "pnlPrincipal";
+            pnlPrincipal.Size = new Size(843, 632);
+            pnlPrincipal.TabIndex = 3;
+            // 
             // Principal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(11, 33, 50);
             ClientSize = new Size(1080, 720);
+            Controls.Add(pnlPrincipal);
+            Controls.Add(panel5);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -340,6 +375,8 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -364,5 +401,8 @@
         private Button button2;
         private Label label6;
         private Panel panel4;
+        private Panel panel5;
+        private Label label7;
+        private Panel pnlPrincipal;
     }
 }
