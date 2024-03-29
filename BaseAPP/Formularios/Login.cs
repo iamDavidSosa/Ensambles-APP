@@ -16,5 +16,14 @@ namespace BaseAPP.Formularios
         {
             InitializeComponent();
         }
+
+        private void btnEnter_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Principal frmPrinc = new Principal();
+            frmPrinc.Show();
+        }
+
+        
     }
 }

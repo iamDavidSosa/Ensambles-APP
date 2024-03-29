@@ -1,4 +1,5 @@
 using BaseAPP.Formularios;
+using System.Windows.Forms;
 
 namespace BaseAPP
 {
@@ -8,11 +9,19 @@ namespace BaseAPP
         {
             InitializeComponent();
 
-            this.pnlPrincipal.Controls.Clear();
-            Dashboard frmDashboard = new Dashboard() {Dock=DockStyle.Fill, TopLevel=false, TopMost=true};
-            this.pnlPrincipal.Controls.Add(frmDashboard);
-            frmDashboard.Show();
+            ChangeForm(new Dashboard());
         }
+
+        public void ChangeForm(Form form)
+        {
+            this.pnlPrincipal.Controls.Clear();
+            form.Dock = DockStyle.Fill;
+            form.TopLevel = false;
+            form.TopMost = true;
+            this.pnlPrincipal.Controls.Add(form);
+            form.Show();
+        }
+
 
 
     }

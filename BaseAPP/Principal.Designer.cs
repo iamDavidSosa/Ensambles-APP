@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
-            panel1 = new Panel();
+            pSuperior = new Panel();
             label2 = new Label();
             pictureBox1 = new PictureBox();
             label1 = new Label();
@@ -51,7 +51,7 @@
             panel5 = new Panel();
             label7 = new Label();
             pnlPrincipal = new Panel();
-            panel1.SuspendLayout();
+            pSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel2.SuspendLayout();
@@ -60,24 +60,24 @@
             panel5.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // pSuperior
             // 
-            panel1.BackColor = Color.FromArgb(13, 50, 76);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(pictureBox2);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1280, 47);
-            panel1.TabIndex = 0;
+            pSuperior.BackColor = Color.FromArgb(13, 50, 76);
+            pSuperior.Controls.Add(label2);
+            pSuperior.Controls.Add(pictureBox1);
+            pSuperior.Controls.Add(label1);
+            pSuperior.Controls.Add(pictureBox2);
+            pSuperior.Dock = DockStyle.Top;
+            pSuperior.Location = new Point(0, 0);
+            pSuperior.Name = "pSuperior";
+            pSuperior.Size = new Size(1280, 47);
+            pSuperior.TabIndex = 0;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.DarkGray;
+            label2.ForeColor = Color.WhiteSmoke;
             label2.Location = new Point(12, 9);
             label2.Name = "label2";
             label2.Size = new Size(100, 28);
@@ -361,13 +361,13 @@
             Controls.Add(pnlPrincipal);
             Controls.Add(panel5);
             Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(pSuperior);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Principal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            pSuperior.ResumeLayout(false);
+            pSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel2.ResumeLayout(false);
@@ -382,7 +382,7 @@
 
         #endregion
 
-        private Panel panel1;
+        private Panel pSuperior;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Label label1;
