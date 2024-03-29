@@ -108,7 +108,7 @@
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(pictureBox2);
-            panel2.Location = new Point(295, 22);
+            panel2.Location = new Point(306, 22);
             panel2.Name = "panel2";
             panel2.Size = new Size(253, 90);
             panel2.TabIndex = 8;
@@ -151,7 +151,7 @@
             panel3.Controls.Add(label5);
             panel3.Controls.Add(label6);
             panel3.Controls.Add(pictureBox3);
-            panel3.Location = new Point(568, 22);
+            panel3.Location = new Point(590, 22);
             panel3.Name = "panel3";
             panel3.Size = new Size(253, 90);
             panel3.TabIndex = 8;
@@ -193,7 +193,7 @@
             panel4.BackColor = Color.FromArgb(13, 50, 76);
             panel4.Controls.Add(pictureBox4);
             panel4.Controls.Add(label7);
-            panel4.Location = new Point(20, 136);
+            panel4.Location = new Point(20, 153);
             panel4.Name = "panel4";
             panel4.Size = new Size(392, 417);
             panel4.TabIndex = 9;
@@ -224,7 +224,7 @@
             panel5.BackColor = Color.FromArgb(13, 50, 76);
             panel5.Controls.Add(pictureBox5);
             panel5.Controls.Add(label8);
-            panel5.Location = new Point(435, 136);
+            panel5.Location = new Point(457, 153);
             panel5.Name = "panel5";
             panel5.Size = new Size(386, 417);
             panel5.TabIndex = 10;
@@ -255,7 +255,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(11, 33, 50);
-            ClientSize = new Size(843, 632);
+            ClientSize = new Size(1043, 632);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);

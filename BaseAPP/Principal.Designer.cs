@@ -70,7 +70,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1080, 47);
+            panel1.Size = new Size(1280, 47);
             panel1.TabIndex = 0;
             // 
             // label2
@@ -87,7 +87,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1008, 8);
+            pictureBox1.Location = new Point(1206, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(32, 32);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -99,7 +99,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.DarkGray;
-            label1.Location = new Point(911, 13);
+            label1.Location = new Point(1109, 13);
             label1.Name = "label1";
             label1.Size = new Size(100, 20);
             label1.TabIndex = 3;
@@ -108,7 +108,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(1041, 8);
+            pictureBox2.Location = new Point(1239, 8);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(32, 32);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -330,7 +330,7 @@
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(237, 47);
             panel5.Name = "panel5";
-            panel5.Size = new Size(843, 41);
+            panel5.Size = new Size(1043, 41);
             panel5.TabIndex = 2;
             // 
             // label7
@@ -349,7 +349,7 @@
             pnlPrincipal.Dock = DockStyle.Fill;
             pnlPrincipal.Location = new Point(237, 88);
             pnlPrincipal.Name = "pnlPrincipal";
-            pnlPrincipal.Size = new Size(843, 632);
+            pnlPrincipal.Size = new Size(1043, 632);
             pnlPrincipal.TabIndex = 3;
             // 
             // Principal
@@ -357,7 +357,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(11, 33, 50);
-            ClientSize = new Size(1080, 720);
+            ClientSize = new Size(1280, 720);
             Controls.Add(pnlPrincipal);
             Controls.Add(panel5);
             Controls.Add(panel2);
