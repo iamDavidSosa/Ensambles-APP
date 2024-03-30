@@ -81,9 +81,10 @@
             textBox1.Font = new Font("Segoe UI", 12F);
             textBox1.ForeColor = Color.Black;
             textBox1.Location = new Point(489, 168);
+            textBox1.Margin = new Padding(3, 6, 3, 3);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(258, 34);
+            textBox1.Size = new Size(258, 28);
             textBox1.TabIndex = 6;
             // 
             // label7
@@ -116,9 +117,10 @@
             textBox2.Font = new Font("Segoe UI", 12F);
             textBox2.ForeColor = Color.Black;
             textBox2.Location = new Point(489, 252);
+            textBox2.Margin = new Padding(3, 6, 3, 3);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(258, 34);
+            textBox2.Size = new Size(258, 28);
             textBox2.TabIndex = 10;
             textBox2.UseSystemPasswordChar = true;
             // 

@@ -33,11 +33,11 @@
             label2 = new Label();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            pictureBox2 = new PictureBox();
+            pbSalir = new PictureBox();
             panel2 = new Panel();
             label6 = new Label();
             button6 = new Button();
-            button5 = new Button();
+            btnInventario = new Button();
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
@@ -49,15 +49,17 @@
             label3 = new Label();
             pictureBox3 = new PictureBox();
             panel5 = new Panel();
-            label7 = new Label();
+            pbTitulo = new PictureBox();
+            lblTitulo = new Label();
             pnlPrincipal = new Panel();
             pSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbSalir).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbTitulo).BeginInit();
             SuspendLayout();
             // 
             // pSuperior
@@ -66,7 +68,7 @@
             pSuperior.Controls.Add(label2);
             pSuperior.Controls.Add(pictureBox1);
             pSuperior.Controls.Add(label1);
-            pSuperior.Controls.Add(pictureBox2);
+            pSuperior.Controls.Add(pbSalir);
             pSuperior.Dock = DockStyle.Top;
             pSuperior.Location = new Point(0, 0);
             pSuperior.Name = "pSuperior";
@@ -105,22 +107,22 @@
             label1.TabIndex = 3;
             label1.Text = "Cerrar Sesión";
             // 
-            // pictureBox2
+            // pbSalir
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(1239, 8);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(32, 32);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
+            pbSalir.Image = (Image)resources.GetObject("pbSalir.Image");
+            pbSalir.Location = new Point(1239, 8);
+            pbSalir.Name = "pbSalir";
+            pbSalir.Size = new Size(32, 32);
+            pbSalir.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbSalir.TabIndex = 2;
+            pbSalir.TabStop = false;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(13, 50, 76);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(button6);
-            panel2.Controls.Add(button5);
+            panel2.Controls.Add(btnInventario);
             panel2.Controls.Add(button4);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(button2);
@@ -162,24 +164,25 @@
             button6.TextImageRelation = TextImageRelation.TextBeforeImage;
             button6.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnInventario
             // 
-            button5.Dock = DockStyle.Top;
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.ForeColor = Color.DarkGray;
-            button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.ImageAlign = ContentAlignment.MiddleRight;
-            button5.Location = new Point(0, 357);
-            button5.Name = "button5";
-            button5.Padding = new Padding(8, 0, 25, 0);
-            button5.Size = new Size(237, 60);
-            button5.TabIndex = 5;
-            button5.Text = "Inventario";
-            button5.TextAlign = ContentAlignment.MiddleLeft;
-            button5.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button5.UseVisualStyleBackColor = true;
+            btnInventario.Dock = DockStyle.Top;
+            btnInventario.FlatAppearance.BorderSize = 0;
+            btnInventario.FlatStyle = FlatStyle.Flat;
+            btnInventario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnInventario.ForeColor = Color.DarkGray;
+            btnInventario.Image = (Image)resources.GetObject("btnInventario.Image");
+            btnInventario.ImageAlign = ContentAlignment.MiddleRight;
+            btnInventario.Location = new Point(0, 357);
+            btnInventario.Name = "btnInventario";
+            btnInventario.Padding = new Padding(8, 0, 25, 0);
+            btnInventario.Size = new Size(237, 60);
+            btnInventario.TabIndex = 5;
+            btnInventario.Text = "Inventario";
+            btnInventario.TextAlign = ContentAlignment.MiddleLeft;
+            btnInventario.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnInventario.UseVisualStyleBackColor = true;
+            btnInventario.Click += btnInventario_Click;
             // 
             // button4
             // 
@@ -326,23 +329,34 @@
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(15, 46, 70);
-            panel5.Controls.Add(label7);
+            panel5.Controls.Add(pbTitulo);
+            panel5.Controls.Add(lblTitulo);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(237, 47);
             panel5.Name = "panel5";
             panel5.Size = new Size(1043, 41);
             panel5.TabIndex = 2;
             // 
-            // label7
+            // pbTitulo
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.DarkGray;
-            label7.Location = new Point(6, 6);
-            label7.Name = "label7";
-            label7.Size = new Size(114, 28);
-            label7.TabIndex = 8;
-            label7.Text = "Dashboard";
+            pbTitulo.Image = Properties.Resources.dashboardT;
+            pbTitulo.Location = new Point(6, 2);
+            pbTitulo.Name = "pbTitulo";
+            pbTitulo.Size = new Size(37, 36);
+            pbTitulo.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbTitulo.TabIndex = 0;
+            pbTitulo.TabStop = false;
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.ForeColor = Color.DarkGray;
+            lblTitulo.Location = new Point(47, 6);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(114, 28);
+            lblTitulo.TabIndex = 8;
+            lblTitulo.Text = "Dashboard";
             // 
             // pnlPrincipal
             // 
@@ -369,7 +383,7 @@
             pSuperior.ResumeLayout(false);
             pSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbSalir).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
@@ -377,6 +391,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbTitulo).EndInit();
             ResumeLayout(false);
         }
 
@@ -384,7 +399,7 @@
 
         private Panel pSuperior;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
+        private PictureBox pbSalir;
         private Label label1;
         private Label label2;
         private Panel panel2;
@@ -395,14 +410,15 @@
         private Button button1;
         private Label label5;
         private Button button6;
-        private Button button5;
+        private Button btnInventario;
         private Button button4;
         private Button button3;
         private Button button2;
         private Label label6;
         private Panel panel4;
         private Panel panel5;
-        private Label label7;
+        private Label lblTitulo;
         private Panel pnlPrincipal;
+        private PictureBox pbTitulo;
     }
 }

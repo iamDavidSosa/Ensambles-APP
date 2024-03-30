@@ -22,7 +22,19 @@ namespace BaseAPP
             form.Show();
         }
 
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            ChangeForm(new MantenimientoComponentes());
+            lblTitulo.Text = "Mantenimiento Componentes";
+            pbTitulo.Image = Properties.Resources.gcard;
+        }
 
+        //Que el pbSalir cierra la aplicación
+        private void pbSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
+       
     }
 }
