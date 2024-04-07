@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
+            pbCerrar = new PictureBox();
             label2 = new Label();
-            textBox1 = new TextBox();
+            txt_usuario = new TextBox();
             label7 = new Label();
             label1 = new Label();
-            textBox2 = new TextBox();
+            txt_clave = new TextBox();
             btnEnter = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbCerrar).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -52,15 +52,16 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // pbCerrar
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(737, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(32, 32);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
+            pbCerrar.Image = (Image)resources.GetObject("pbCerrar.Image");
+            pbCerrar.Location = new Point(737, 0);
+            pbCerrar.Name = "pbCerrar";
+            pbCerrar.Size = new Size(32, 32);
+            pbCerrar.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbCerrar.TabIndex = 3;
+            pbCerrar.TabStop = false;
+            pbCerrar.Click += pbCerrar_Click;
             // 
             // label2
             // 
@@ -74,18 +75,17 @@
             label2.TabIndex = 5;
             label2.Text = "INICIO DE SESIÓN";
             // 
-            // textBox1
+            // txt_usuario
             // 
-            textBox1.BackColor = SystemColors.InactiveCaption;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.ForeColor = Color.Black;
-            textBox1.Location = new Point(489, 168);
-            textBox1.Margin = new Padding(3, 6, 3, 3);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(258, 28);
-            textBox1.TabIndex = 6;
+            txt_usuario.BackColor = SystemColors.InactiveCaption;
+            txt_usuario.BorderStyle = BorderStyle.None;
+            txt_usuario.Font = new Font("Segoe UI", 12F);
+            txt_usuario.ForeColor = Color.Black;
+            txt_usuario.Location = new Point(489, 168);
+            txt_usuario.Margin = new Padding(3, 3, 10, 3);
+            txt_usuario.Name = "txt_usuario";
+            txt_usuario.Size = new Size(258, 27);
+            txt_usuario.TabIndex = 6;
             // 
             // label7
             // 
@@ -110,19 +110,18 @@
             label1.TabIndex = 11;
             label1.Text = "Contraseña:";
             // 
-            // textBox2
+            // txt_clave
             // 
-            textBox2.BackColor = SystemColors.InactiveCaption;
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Segoe UI", 12F);
-            textBox2.ForeColor = Color.Black;
-            textBox2.Location = new Point(489, 252);
-            textBox2.Margin = new Padding(3, 6, 3, 3);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(258, 28);
-            textBox2.TabIndex = 10;
-            textBox2.UseSystemPasswordChar = true;
+            txt_clave.BackColor = SystemColors.InactiveCaption;
+            txt_clave.BorderStyle = BorderStyle.None;
+            txt_clave.Font = new Font("Segoe UI", 12F);
+            txt_clave.ForeColor = Color.Black;
+            txt_clave.Location = new Point(489, 252);
+            txt_clave.Margin = new Padding(3, 3, 10, 3);
+            txt_clave.Name = "txt_clave";
+            txt_clave.Size = new Size(258, 27);
+            txt_clave.TabIndex = 10;
+            txt_clave.UseSystemPasswordChar = true;
             // 
             // btnEnter
             // 
@@ -147,18 +146,18 @@
             ClientSize = new Size(769, 456);
             Controls.Add(btnEnter);
             Controls.Add(label1);
-            Controls.Add(textBox2);
+            Controls.Add(txt_clave);
             Controls.Add(label7);
-            Controls.Add(textBox1);
+            Controls.Add(txt_usuario);
             Controls.Add(label2);
-            Controls.Add(pictureBox2);
+            Controls.Add(pbCerrar);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbCerrar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -166,12 +165,12 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
+        private PictureBox pbCerrar;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox txt_usuario;
         private Label label7;
         private Label label1;
-        private TextBox textBox2;
+        private TextBox txt_clave;
         private Button btnEnter;
     }
 }

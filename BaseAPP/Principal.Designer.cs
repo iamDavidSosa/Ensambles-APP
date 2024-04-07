@@ -100,7 +100,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.DarkGray;
+            label1.ForeColor = Color.WhiteSmoke;
             label1.Location = new Point(1176, 13);
             label1.Name = "label1";
             label1.Size = new Size(100, 20);
@@ -116,6 +116,7 @@
             pbSalir.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSalir.TabIndex = 2;
             pbSalir.TabStop = false;
+            pbSalir.Click += pbSalir_Click_1;
             // 
             // panel2
             // 

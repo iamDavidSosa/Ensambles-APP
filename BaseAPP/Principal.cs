@@ -35,6 +35,12 @@ namespace BaseAPP
             Application.Exit();
         }
 
-       
+        private void pbSalir_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Estás seguro que deseas salir?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
