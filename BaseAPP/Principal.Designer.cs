@@ -72,7 +72,7 @@
             pSuperior.Dock = DockStyle.Top;
             pSuperior.Location = new Point(0, 0);
             pSuperior.Name = "pSuperior";
-            pSuperior.Size = new Size(1280, 47);
+            pSuperior.Size = new Size(1346, 47);
             pSuperior.TabIndex = 0;
             // 
             // label2
@@ -89,7 +89,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1206, 8);
+            pictureBox1.Location = new Point(1273, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(32, 32);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -101,7 +101,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.DarkGray;
-            label1.Location = new Point(1109, 13);
+            label1.Location = new Point(1176, 13);
             label1.Name = "label1";
             label1.Size = new Size(100, 20);
             label1.TabIndex = 3;
@@ -110,7 +110,7 @@
             // pbSalir
             // 
             pbSalir.Image = (Image)resources.GetObject("pbSalir.Image");
-            pbSalir.Location = new Point(1239, 8);
+            pbSalir.Location = new Point(1306, 8);
             pbSalir.Name = "pbSalir";
             pbSalir.Size = new Size(32, 32);
             pbSalir.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -131,7 +131,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 47);
             panel2.Name = "panel2";
-            panel2.Size = new Size(237, 673);
+            panel2.Size = new Size(237, 738);
             panel2.TabIndex = 1;
             // 
             // label6
@@ -139,7 +139,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.DarkGray;
-            label6.Location = new Point(66, 638);
+            label6.Location = new Point(66, 712);
             label6.Name = "label6";
             label6.Size = new Size(94, 20);
             label6.TabIndex = 7;
@@ -151,7 +151,7 @@
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button6.ForeColor = Color.DarkGray;
+            button6.ForeColor = Color.LightGray;
             button6.Image = (Image)resources.GetObject("button6.Image");
             button6.ImageAlign = ContentAlignment.MiddleRight;
             button6.Location = new Point(0, 417);
@@ -170,7 +170,7 @@
             btnInventario.FlatAppearance.BorderSize = 0;
             btnInventario.FlatStyle = FlatStyle.Flat;
             btnInventario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnInventario.ForeColor = Color.DarkGray;
+            btnInventario.ForeColor = Color.LightGray;
             btnInventario.Image = (Image)resources.GetObject("btnInventario.Image");
             btnInventario.ImageAlign = ContentAlignment.MiddleRight;
             btnInventario.Location = new Point(0, 357);
@@ -190,7 +190,7 @@
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.DarkGray;
+            button4.ForeColor = Color.LightGray;
             button4.Image = (Image)resources.GetObject("button4.Image");
             button4.ImageAlign = ContentAlignment.MiddleRight;
             button4.Location = new Point(0, 297);
@@ -209,7 +209,7 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.DarkGray;
+            button3.ForeColor = Color.LightGray;
             button3.Image = (Image)resources.GetObject("button3.Image");
             button3.ImageAlign = ContentAlignment.MiddleRight;
             button3.Location = new Point(0, 237);
@@ -228,7 +228,7 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.DarkGray;
+            button2.ForeColor = Color.LightGray;
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.MiddleRight;
             button2.Location = new Point(0, 177);
@@ -247,7 +247,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.DarkGray;
+            button1.ForeColor = Color.LightGray;
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleRight;
             button1.Location = new Point(0, 117);
@@ -287,7 +287,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.DarkGray;
+            label5.ForeColor = Color.LightGray;
             label5.Location = new Point(12, 82);
             label5.Name = "label5";
             label5.Size = new Size(60, 23);
@@ -309,7 +309,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.DarkGray;
+            label3.ForeColor = Color.LightGray;
             label3.Location = new Point(77, 16);
             label3.Name = "label3";
             label3.Size = new Size(114, 23);
@@ -334,7 +334,7 @@
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(237, 47);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1043, 41);
+            panel5.Size = new Size(1109, 41);
             panel5.TabIndex = 2;
             // 
             // pbTitulo
@@ -351,7 +351,7 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = Color.DarkGray;
+            lblTitulo.ForeColor = Color.LightGray;
             lblTitulo.Location = new Point(47, 6);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(114, 28);
@@ -363,7 +363,7 @@
             pnlPrincipal.Dock = DockStyle.Fill;
             pnlPrincipal.Location = new Point(237, 88);
             pnlPrincipal.Name = "pnlPrincipal";
-            pnlPrincipal.Size = new Size(1043, 632);
+            pnlPrincipal.Size = new Size(1109, 697);
             pnlPrincipal.TabIndex = 3;
             // 
             // Principal
@@ -371,7 +371,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(11, 33, 50);
-            ClientSize = new Size(1280, 720);
+            ClientSize = new Size(1346, 785);
             Controls.Add(pnlPrincipal);
             Controls.Add(panel5);
             Controls.Add(panel2);

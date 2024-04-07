@@ -92,8 +92,8 @@
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.DarkGray;
-            label7.Location = new Point(489, 137);
+            label7.ForeColor = Color.LightGray;
+            label7.Location = new Point(482, 137);
             label7.Name = "label7";
             label7.Size = new Size(86, 28);
             label7.TabIndex = 9;
@@ -103,8 +103,8 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.DarkGray;
-            label1.Location = new Point(489, 221);
+            label1.ForeColor = Color.LightGray;
+            label1.Location = new Point(482, 221);
             label1.Name = "label1";
             label1.Size = new Size(119, 28);
             label1.TabIndex = 11;
@@ -126,7 +126,7 @@
             // 
             // btnEnter
             // 
-            btnEnter.BackColor = SystemColors.InactiveCaption;
+            btnEnter.BackColor = Color.FromArgb(7, 111, 178);
             btnEnter.FlatStyle = FlatStyle.Flat;
             btnEnter.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btnEnter.Image = (Image)resources.GetObject("btnEnter.Image");

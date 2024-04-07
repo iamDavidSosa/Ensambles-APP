@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MantenimientoComponentes));
             groupBox1 = new GroupBox();
+            textBox7 = new TextBox();
+            label8 = new Label();
             pictureBox1 = new PictureBox();
             dataGridView2 = new DataGridView();
             label7 = new Label();
@@ -46,8 +48,9 @@
             textBox1 = new TextBox();
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            textBox7 = new TextBox();
-            label8 = new Label();
+            button1 = new Button();
+            button2 = new Button();
+            label9 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -78,15 +81,38 @@
             groupBox1.ForeColor = SystemColors.ControlLight;
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(424, 608);
+            groupBox1.Size = new Size(424, 592);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos de componentes";
             // 
+            // textBox7
+            // 
+            textBox7.BackColor = Color.FromArgb(13, 50, 76);
+            textBox7.BorderStyle = BorderStyle.None;
+            textBox7.Font = new Font("Segoe UI", 10.8F);
+            textBox7.ForeColor = Color.WhiteSmoke;
+            textBox7.Location = new Point(20, 252);
+            textBox7.Multiline = true;
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(376, 29);
+            textBox7.TabIndex = 24;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            label8.ForeColor = Color.LightGray;
+            label8.Location = new Point(16, 225);
+            label8.Name = "label8";
+            label8.Size = new Size(73, 23);
+            label8.TabIndex = 23;
+            label8.Text = "Modelo:";
+            // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(139, 450);
+            pictureBox1.Location = new Point(139, 443);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(30, 29);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -97,7 +123,7 @@
             // 
             dataGridView2.BackgroundColor = Color.FromArgb(13, 50, 76);
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(20, 483);
+            dataGridView2.Location = new Point(20, 477);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.Size = new Size(376, 106);
@@ -108,7 +134,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             label7.ForeColor = Color.LightGray;
-            label7.Location = new Point(16, 453);
+            label7.Location = new Point(16, 446);
             label7.Name = "label7";
             label7.Size = new Size(123, 23);
             label7.TabIndex = 20;
@@ -120,7 +146,7 @@
             textBox6.BorderStyle = BorderStyle.None;
             textBox6.Font = new Font("Segoe UI", 10.8F);
             textBox6.ForeColor = Color.WhiteSmoke;
-            textBox6.Location = new Point(224, 412);
+            textBox6.Location = new Point(224, 407);
             textBox6.Multiline = true;
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(172, 29);
@@ -132,7 +158,7 @@
             textBox5.BorderStyle = BorderStyle.None;
             textBox5.Font = new Font("Segoe UI", 10.8F);
             textBox5.ForeColor = Color.WhiteSmoke;
-            textBox5.Location = new Point(16, 412);
+            textBox5.Location = new Point(16, 407);
             textBox5.Multiline = true;
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(172, 29);
@@ -143,7 +169,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             label6.ForeColor = Color.LightGray;
-            label6.Location = new Point(224, 385);
+            label6.Location = new Point(224, 380);
             label6.Name = "label6";
             label6.Size = new Size(61, 23);
             label6.TabIndex = 17;
@@ -154,7 +180,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             label5.ForeColor = Color.LightGray;
-            label5.Location = new Point(16, 385);
+            label5.Location = new Point(16, 380);
             label5.Name = "label5";
             label5.Size = new Size(83, 23);
             label5.TabIndex = 16;
@@ -202,9 +228,9 @@
             label3.ForeColor = Color.LightGray;
             label3.Location = new Point(16, 166);
             label3.Name = "label3";
-            label3.Size = new Size(73, 23);
+            label3.Size = new Size(62, 23);
             label3.TabIndex = 12;
-            label3.Text = "Modelo:";
+            label3.Text = "Marca:";
             // 
             // textBox2
             // 
@@ -225,9 +251,9 @@
             label2.ForeColor = Color.LightGray;
             label2.Location = new Point(16, 97);
             label2.Name = "label2";
-            label2.Size = new Size(62, 23);
+            label2.Size = new Size(47, 23);
             label2.TabIndex = 10;
-            label2.Text = "Marca:";
+            label2.Text = "Tipo:";
             // 
             // textBox1
             // 
@@ -257,41 +283,59 @@
             dataGridView1.BackgroundColor = Color.FromArgb(13, 50, 76);
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(455, 23);
+            dataGridView1.Location = new Point(455, 68);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(576, 597);
+            dataGridView1.Size = new Size(642, 617);
             dataGridView1.TabIndex = 1;
             // 
-            // textBox7
+            // button1
             // 
-            textBox7.BackColor = Color.FromArgb(13, 50, 76);
-            textBox7.BorderStyle = BorderStyle.None;
-            textBox7.Font = new Font("Segoe UI", 10.8F);
-            textBox7.ForeColor = Color.WhiteSmoke;
-            textBox7.Location = new Point(20, 252);
-            textBox7.Multiline = true;
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(376, 29);
-            textBox7.TabIndex = 24;
+            button1.BackColor = Color.FromArgb(7, 111, 178);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ActiveCaptionText;
+            button1.Location = new Point(12, 609);
+            button1.Name = "button1";
+            button1.Size = new Size(424, 37);
+            button1.TabIndex = 2;
+            button1.Text = "AGREGAR";
+            button1.UseVisualStyleBackColor = false;
             // 
-            // label8
+            // button2
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label8.ForeColor = Color.LightGray;
-            label8.Location = new Point(16, 225);
-            label8.Name = "label8";
-            label8.Size = new Size(47, 23);
-            label8.TabIndex = 23;
-            label8.Text = "Tipo:";
+            button2.BackColor = Color.FromArgb(7, 111, 178);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = SystemColors.ActiveCaptionText;
+            button2.Location = new Point(12, 654);
+            button2.Name = "button2";
+            button2.Size = new Size(424, 37);
+            button2.TabIndex = 3;
+            button2.Text = "ELIMINAR";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.LightGray;
+            label9.Location = new Point(455, 22);
+            label9.Name = "label9";
+            label9.Size = new Size(281, 31);
+            label9.TabIndex = 25;
+            label9.Text = "Listado de componentes:";
             // 
             // MantenimientoComponentes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(11, 33, 50);
-            ClientSize = new Size(1043, 632);
+            ClientSize = new Size(1109, 697);
+            Controls.Add(label9);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.None;
@@ -303,6 +347,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -326,5 +371,8 @@
         private DataGridView dataGridView2;
         private TextBox textBox7;
         private Label label8;
+        private Button button1;
+        private Button button2;
+        private Label label9;
     }
 }
