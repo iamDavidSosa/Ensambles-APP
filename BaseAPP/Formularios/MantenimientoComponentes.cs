@@ -15,6 +15,7 @@ namespace BaseAPP.Formularios
     {
         private string? Id_componente;
         public static string? id_componente_actual;
+        public static string? Id_tipo_componente;
         CN_Componentes componentes = new CN_Componentes();
         public MantenimientoComponentes()
         {
@@ -24,6 +25,7 @@ namespace BaseAPP.Formularios
         private void MantenimientoComponentes_Load_1(object sender, EventArgs e)
         {
             MostrarComponentes();
+            MostrarCaracteristicas("0");
             LlenarTipos();
             LlenarMarcas();
         }
@@ -37,6 +39,21 @@ namespace BaseAPP.Formularios
             catch (Exception ex)
             {
                 MessageBox.Show("Error al mostrar los componentes: " + ex.Message);
+            }
+        }
+
+        private void MostrarCaracteristicas(string id_componente)
+        {
+            try
+            {
+                CN_CaracteristicasComponentes objetoBusqueda = new();
+                DataTable tabla = new();
+                tabla = objetoBusqueda.Mostrar(id_componente);
+                dgvCaracteristicas.DataSource = tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al mostrar las características: " + ex.Message);
             }
         }
 
@@ -78,6 +95,7 @@ namespace BaseAPP.Formularios
                 Id_componente = tabla.Rows[0]["id_componente"].ToString();
                 id_componente_actual = Id_componente;
                 cbTipoComponente.SelectedValue = tabla.Rows[0]["id_tipo_componente"].ToString();
+                Id_tipo_componente = cbTipoComponente.SelectedValue.ToString();
                 cbMarca.SelectedValue = tabla.Rows[0]["id_marca"].ToString();
                 txtModelo.Text = tabla.Rows[0]["modelo"].ToString();
                 txtDescripcion.Text = tabla.Rows[0]["descripcion"].ToString();
@@ -97,7 +115,7 @@ namespace BaseAPP.Formularios
             {
                 string? ID = dgvComponentes.CurrentRow.Cells["ID"].Value.ToString();
                 BuscarComponente(ID);
-
+                MostrarCaracteristicas(ID);
             }
         }
 
@@ -137,7 +155,7 @@ namespace BaseAPP.Formularios
             {
                 if (Id_componente != null)
                 {
-                    if(MessageBox.Show("¿Estás seguro que deseas eliminar el componente?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("¿Estás seguro que deseas eliminar el componente?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         componentes.Eliminar(Id_componente);
                         Limpiar();
@@ -153,6 +171,12 @@ namespace BaseAPP.Formularios
             {
                 MessageBox.Show("Error al eliminar el componente: " + ex.Message);
             }
+        }
+
+        private void pbCaracteristicas_Click(object sender, EventArgs e)
+        {
+            Formularios.MantenimientoCaracteristicasComponentes caracteristicas = new();
+            caracteristicas.ShowDialog();
         }
     }
 

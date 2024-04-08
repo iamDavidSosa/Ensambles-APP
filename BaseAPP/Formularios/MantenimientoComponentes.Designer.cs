@@ -34,7 +34,7 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
-            dataGridView1 = new DataGridView();
+            dgvCaracteristicas = new DataGridView();
             pictureBox3 = new PictureBox();
             btnEliminar = new Button();
             pictureBox2 = new PictureBox();
@@ -43,7 +43,7 @@
             cbTipoComponente = new ComboBox();
             txtModelo = new TextBox();
             label8 = new Label();
-            pictureBox1 = new PictureBox();
+            pbCaracteristicas = new PictureBox();
             label7 = new Label();
             txtPrecio = new TextBox();
             txtCantidad = new TextBox();
@@ -56,17 +56,17 @@
             dgvComponentes = new DataGridView();
             label9 = new Label();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCaracteristicas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbCaracteristicas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvComponentes).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
             groupBox1.BackgroundImageLayout = ImageLayout.None;
-            groupBox1.Controls.Add(dataGridView1);
+            groupBox1.Controls.Add(dgvCaracteristicas);
             groupBox1.Controls.Add(pictureBox3);
             groupBox1.Controls.Add(btnEliminar);
             groupBox1.Controls.Add(pictureBox2);
@@ -75,7 +75,7 @@
             groupBox1.Controls.Add(cbTipoComponente);
             groupBox1.Controls.Add(txtModelo);
             groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(pictureBox1);
+            groupBox1.Controls.Add(pbCaracteristicas);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(txtPrecio);
             groupBox1.Controls.Add(txtCantidad);
@@ -93,16 +93,18 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos de componentes";
             // 
-            // dataGridView1
+            // dgvCaracteristicas
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridView1.BackgroundColor = Color.FromArgb(11, 33, 50);
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvCaracteristicas.AllowUserToAddRows = false;
+            dgvCaracteristicas.AllowUserToDeleteRows = false;
+            dgvCaracteristicas.AllowUserToResizeColumns = false;
+            dgvCaracteristicas.AllowUserToResizeRows = false;
+            dgvCaracteristicas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvCaracteristicas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCaracteristicas.BackgroundColor = Color.FromArgb(11, 33, 50);
+            dgvCaracteristicas.BorderStyle = BorderStyle.None;
+            dgvCaracteristicas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvCaracteristicas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(7, 111, 178);
             dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -110,28 +112,28 @@
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.ColumnHeadersHeight = 30;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.GridColor = SystemColors.MenuBar;
-            dataGridView1.Location = new Point(20, 420);
-            dataGridView1.MultiSelect = false;
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvCaracteristicas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvCaracteristicas.ColumnHeadersHeight = 30;
+            dgvCaracteristicas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvCaracteristicas.EnableHeadersVisualStyles = false;
+            dgvCaracteristicas.GridColor = SystemColors.MenuBar;
+            dgvCaracteristicas.Location = new Point(20, 420);
+            dgvCaracteristicas.MultiSelect = false;
+            dgvCaracteristicas.Name = "dgvCaracteristicas";
+            dgvCaracteristicas.ReadOnly = true;
+            dgvCaracteristicas.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvCaracteristicas.RowHeadersVisible = false;
+            dgvCaracteristicas.RowHeadersWidth = 51;
+            dgvCaracteristicas.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(13, 50, 76);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.WhiteSmoke;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(14, 95, 147);
             dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(386, 182);
-            dataGridView1.TabIndex = 29;
+            dgvCaracteristicas.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dgvCaracteristicas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCaracteristicas.Size = new Size(386, 182);
+            dgvCaracteristicas.TabIndex = 29;
             // 
             // pictureBox3
             // 
@@ -234,15 +236,17 @@
             label8.TabIndex = 23;
             label8.Text = "Modelo:";
             // 
-            // pictureBox1
+            // pbCaracteristicas
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(150, 378);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(37, 36);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 22;
-            pictureBox1.TabStop = false;
+            pbCaracteristicas.Cursor = Cursors.Hand;
+            pbCaracteristicas.Image = (Image)resources.GetObject("pbCaracteristicas.Image");
+            pbCaracteristicas.Location = new Point(150, 378);
+            pbCaracteristicas.Name = "pbCaracteristicas";
+            pbCaracteristicas.Size = new Size(37, 36);
+            pbCaracteristicas.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbCaracteristicas.TabIndex = 22;
+            pbCaracteristicas.TabStop = false;
+            pbCaracteristicas.Click += pbCaracteristicas_Click;
             // 
             // label7
             // 
@@ -350,6 +354,8 @@
             // 
             dgvComponentes.AllowUserToAddRows = false;
             dgvComponentes.AllowUserToDeleteRows = false;
+            dgvComponentes.AllowUserToResizeColumns = false;
+            dgvComponentes.AllowUserToResizeRows = false;
             dgvComponentes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvComponentes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvComponentes.BackgroundColor = Color.FromArgb(11, 33, 50);
@@ -413,10 +419,10 @@
             Load += MantenimientoComponentes_Load_1;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCaracteristicas).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbCaracteristicas).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvComponentes).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -435,7 +441,7 @@
         private Label label3;
         private Label label2;
         private DataGridView dgvComponentes;
-        private PictureBox pictureBox1;
+        private PictureBox pbCaracteristicas;
         private TextBox txtModelo;
         private Label label8;
         private Button btnGuardar;
@@ -445,6 +451,6 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private ComboBox cbMarca;
-        private DataGridView dataGridView1;
+        private DataGridView dgvCaracteristicas;
     }
 }
