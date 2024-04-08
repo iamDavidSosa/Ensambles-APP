@@ -65,9 +65,9 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(20, 22);
+            panel1.Location = new Point(20, 42);
             panel1.Name = "panel1";
-            panel1.Size = new Size(253, 90);
+            panel1.Size = new Size(314, 90);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -108,9 +108,9 @@
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(pictureBox2);
-            panel2.Location = new Point(306, 22);
+            panel2.Location = new Point(356, 42);
             panel2.Name = "panel2";
-            panel2.Size = new Size(253, 90);
+            panel2.Size = new Size(314, 90);
             panel2.TabIndex = 8;
             // 
             // label2
@@ -151,9 +151,9 @@
             panel3.Controls.Add(label5);
             panel3.Controls.Add(label6);
             panel3.Controls.Add(pictureBox3);
-            panel3.Location = new Point(590, 22);
+            panel3.Location = new Point(692, 42);
             panel3.Name = "panel3";
-            panel3.Size = new Size(253, 90);
+            panel3.Size = new Size(314, 90);
             panel3.TabIndex = 8;
             // 
             // label5
@@ -195,13 +195,13 @@
             panel4.Controls.Add(label7);
             panel4.Location = new Point(20, 153);
             panel4.Name = "panel4";
-            panel4.Size = new Size(392, 417);
+            panel4.Size = new Size(486, 417);
             panel4.TabIndex = 9;
             // 
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(58, 90);
+            pictureBox4.Location = new Point(99, 90);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(272, 248);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -224,15 +224,15 @@
             panel5.BackColor = Color.FromArgb(13, 50, 76);
             panel5.Controls.Add(pictureBox5);
             panel5.Controls.Add(label8);
-            panel5.Location = new Point(457, 153);
+            panel5.Location = new Point(530, 153);
             panel5.Name = "panel5";
-            panel5.Size = new Size(386, 417);
+            panel5.Size = new Size(476, 417);
             panel5.TabIndex = 10;
             // 
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(55, 90);
+            pictureBox5.Location = new Point(113, 90);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(257, 248);
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;

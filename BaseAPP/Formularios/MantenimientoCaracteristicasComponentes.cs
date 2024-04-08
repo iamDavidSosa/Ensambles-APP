@@ -103,7 +103,15 @@ namespace BaseAPP.Formularios
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            EliminarCaracteristica();
+            if(MessageBox.Show("¿Está seguro de eliminar la característica?", "Eliminar característica", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                EliminarCaracteristica();
+            }
+            else
+            {
+                Limpiar();
+            }
+            
         }
 
         private void dgvCaracteristicas_CellClick(object sender, DataGridViewCellEventArgs e)

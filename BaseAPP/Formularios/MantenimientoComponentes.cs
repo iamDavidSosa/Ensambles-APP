@@ -177,6 +177,7 @@ namespace BaseAPP.Formularios
         {
             Formularios.MantenimientoCaracteristicasComponentes caracteristicas = new();
             caracteristicas.ShowDialog();
+            MostrarCaracteristicas(id_componente_actual);
         }
     }
 
