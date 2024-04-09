@@ -42,5 +42,12 @@ namespace BaseAPP
                 Application.Exit();
             }
         }
+
+        private void btnReglas_Click(object sender, EventArgs e)
+        {
+            ChangeForm(new MantenimientoReglasCompatibilidad());
+            lblTitulo.Text = "Mantenimiento Reglas de Compatibilidad";
+            pbTitulo.Image = Properties.Resources.reglas1;
+        }
     }
 }

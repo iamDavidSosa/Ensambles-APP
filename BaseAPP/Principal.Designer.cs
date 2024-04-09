@@ -39,7 +39,7 @@
             button6 = new Button();
             btnInventario = new Button();
             button4 = new Button();
-            button3 = new Button();
+            btnReglas = new Button();
             button2 = new Button();
             button1 = new Button();
             panel3 = new Panel();
@@ -125,7 +125,7 @@
             panel2.Controls.Add(button6);
             panel2.Controls.Add(btnInventario);
             panel2.Controls.Add(button4);
-            panel2.Controls.Add(button3);
+            panel2.Controls.Add(btnReglas);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(panel3);
@@ -204,24 +204,25 @@
             button4.TextImageRelation = TextImageRelation.TextBeforeImage;
             button4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnReglas
             // 
-            button3.Dock = DockStyle.Top;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.LightGray;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.ImageAlign = ContentAlignment.MiddleRight;
-            button3.Location = new Point(0, 237);
-            button3.Name = "button3";
-            button3.Padding = new Padding(8, 0, 25, 0);
-            button3.Size = new Size(237, 60);
-            button3.TabIndex = 3;
-            button3.Text = "Soporte";
-            button3.TextAlign = ContentAlignment.MiddleLeft;
-            button3.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button3.UseVisualStyleBackColor = true;
+            btnReglas.Dock = DockStyle.Top;
+            btnReglas.FlatAppearance.BorderSize = 0;
+            btnReglas.FlatStyle = FlatStyle.Flat;
+            btnReglas.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReglas.ForeColor = Color.LightGray;
+            btnReglas.Image = (Image)resources.GetObject("btnReglas.Image");
+            btnReglas.ImageAlign = ContentAlignment.MiddleRight;
+            btnReglas.Location = new Point(0, 237);
+            btnReglas.Name = "btnReglas";
+            btnReglas.Padding = new Padding(8, 0, 25, 0);
+            btnReglas.Size = new Size(237, 60);
+            btnReglas.TabIndex = 3;
+            btnReglas.Text = "Soporte";
+            btnReglas.TextAlign = ContentAlignment.MiddleLeft;
+            btnReglas.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnReglas.UseVisualStyleBackColor = true;
+            btnReglas.Click += btnReglas_Click;
             // 
             // button2
             // 
@@ -413,7 +414,7 @@
         private Button button6;
         private Button btnInventario;
         private Button button4;
-        private Button button3;
+        private Button btnReglas;
         private Button button2;
         private Label label6;
         private Panel panel4;
