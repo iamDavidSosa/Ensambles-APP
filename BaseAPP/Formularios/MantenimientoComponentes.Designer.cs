@@ -35,9 +35,9 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             dgvCaracteristicas = new DataGridView();
-            pictureBox3 = new PictureBox();
+            pbMarcas = new PictureBox();
             btnEliminar = new Button();
-            pictureBox2 = new PictureBox();
+            pbTiposComponentes = new PictureBox();
             btnGuardar = new Button();
             cbMarca = new ComboBox();
             cbTipoComponente = new ComboBox();
@@ -57,8 +57,8 @@
             label9 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCaracteristicas).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbMarcas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbTiposComponentes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbCaracteristicas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvComponentes).BeginInit();
             SuspendLayout();
@@ -67,9 +67,9 @@
             // 
             groupBox1.BackgroundImageLayout = ImageLayout.None;
             groupBox1.Controls.Add(dgvCaracteristicas);
-            groupBox1.Controls.Add(pictureBox3);
+            groupBox1.Controls.Add(pbMarcas);
             groupBox1.Controls.Add(btnEliminar);
-            groupBox1.Controls.Add(pictureBox2);
+            groupBox1.Controls.Add(pbTiposComponentes);
             groupBox1.Controls.Add(btnGuardar);
             groupBox1.Controls.Add(cbMarca);
             groupBox1.Controls.Add(cbTipoComponente);
@@ -135,15 +135,16 @@
             dgvCaracteristicas.Size = new Size(386, 182);
             dgvCaracteristicas.TabIndex = 29;
             // 
-            // pictureBox3
+            // pbMarcas
             // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(374, 122);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(32, 33);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 28;
-            pictureBox3.TabStop = false;
+            pbMarcas.Image = (Image)resources.GetObject("pbMarcas.Image");
+            pbMarcas.Location = new Point(374, 122);
+            pbMarcas.Name = "pbMarcas";
+            pbMarcas.Size = new Size(32, 33);
+            pbMarcas.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbMarcas.TabIndex = 28;
+            pbMarcas.TabStop = false;
+            pbMarcas.Click += pbMarcas_Click;
             // 
             // btnEliminar
             // 
@@ -162,15 +163,16 @@
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
-            // pictureBox2
+            // pbTiposComponentes
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(372, 54);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(34, 35);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 27;
-            pictureBox2.TabStop = false;
+            pbTiposComponentes.Image = (Image)resources.GetObject("pbTiposComponentes.Image");
+            pbTiposComponentes.Location = new Point(372, 54);
+            pbTiposComponentes.Name = "pbTiposComponentes";
+            pbTiposComponentes.Size = new Size(34, 35);
+            pbTiposComponentes.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbTiposComponentes.TabIndex = 27;
+            pbTiposComponentes.TabStop = false;
+            pbTiposComponentes.Click += pbTiposComponentes_Click;
             // 
             // btnGuardar
             // 
@@ -420,8 +422,8 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCaracteristicas).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbMarcas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbTiposComponentes).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbCaracteristicas).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvComponentes).EndInit();
             ResumeLayout(false);
@@ -448,8 +450,8 @@
         private Button btnEliminar;
         private Label label9;
         private ComboBox cbTipoComponente;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
+        private PictureBox pbMarcas;
+        private PictureBox pbTiposComponentes;
         private ComboBox cbMarca;
         private DataGridView dgvCaracteristicas;
     }

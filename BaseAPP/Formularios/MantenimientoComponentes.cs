@@ -179,6 +179,20 @@ namespace BaseAPP.Formularios
             caracteristicas.ShowDialog();
             MostrarCaracteristicas(id_componente_actual);
         }
+
+        private void pbMarcas_Click(object sender, EventArgs e)
+        {
+            Formularios.MantenimientoMarcas marcas = new();
+            marcas.ShowDialog();
+            LlenarMarcas();
+        }
+
+        private void pbTiposComponentes_Click(object sender, EventArgs e)
+        {
+            Formularios.MantenimientoTiposComponentes tipos = new();
+            tipos.ShowDialog();
+            LlenarTipos();
+        }
     }
 
 }
