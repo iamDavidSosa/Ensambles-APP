@@ -246,6 +246,7 @@
             dgvReglas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvReglas.Size = new Size(1123, 374);
             dgvReglas.TabIndex = 41;
+            dgvReglas.CellClick += dgvReglas_CellClick;
             // 
             // btnEliminar
             // 
@@ -262,6 +263,7 @@
             btnEliminar.TabIndex = 43;
             btnEliminar.Text = "ELIMINAR";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnGuardar
             // 
@@ -306,6 +308,7 @@
             btnLimpiar.TabIndex = 45;
             btnLimpiar.Text = "LIMPIAR";
             btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // MantenimientoReglasCompatibilidad
             // 

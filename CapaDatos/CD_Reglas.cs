@@ -51,5 +51,18 @@ namespace CapaDatos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }
+
+        public DataTable RetornarRegla(Int32 id_regla)
+        {
+            DataTable tabla = new DataTable();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "RetornarRegla";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id_regla", id_regla);
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            conexion.CerrarConexion();
+            return tabla;
+        }
     }
 }

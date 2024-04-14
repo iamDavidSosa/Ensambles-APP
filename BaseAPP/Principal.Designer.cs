@@ -82,9 +82,9 @@
             label2.ForeColor = Color.WhiteSmoke;
             label2.Location = new Point(12, 9);
             label2.Name = "label2";
-            label2.Size = new Size(100, 28);
+            label2.Size = new Size(155, 28);
             label2.TabIndex = 4;
-            label2.Text = "Base APP";
+            label2.Text = "Ensambles APP";
             // 
             // pictureBox1
             // 
@@ -199,7 +199,7 @@
             button4.Padding = new Padding(8, 0, 25, 0);
             button4.Size = new Size(237, 60);
             button4.TabIndex = 4;
-            button4.Text = "Contabilidad";
+            button4.Text = "Reglas de compatibilidad";
             button4.TextAlign = ContentAlignment.MiddleLeft;
             button4.TextImageRelation = TextImageRelation.TextBeforeImage;
             button4.UseVisualStyleBackColor = true;
@@ -218,7 +218,7 @@
             btnReglas.Padding = new Padding(8, 0, 25, 0);
             btnReglas.Size = new Size(237, 60);
             btnReglas.TabIndex = 3;
-            btnReglas.Text = "Soporte";
+            btnReglas.Text = "Ensambles";
             btnReglas.TextAlign = ContentAlignment.MiddleLeft;
             btnReglas.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnReglas.UseVisualStyleBackColor = true;

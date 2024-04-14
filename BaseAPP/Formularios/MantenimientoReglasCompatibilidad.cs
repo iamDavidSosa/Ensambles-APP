@@ -23,6 +23,8 @@ namespace BaseAPP.Formularios
         private void MantenimientoReglasCompatibilidad_Load(object sender, EventArgs e)
         {
             LlenarTipos();
+            RetornarCaracteristicas(cbTipo1.SelectedValue.ToString(), cbCaracteristica1);
+            RetornarCaracteristicas(cbTipo2.SelectedValue.ToString(), cbCaracteristica2);
             MostrarReglas();
         }
 
@@ -96,6 +98,53 @@ namespace BaseAPP.Formularios
         private void cbTipo2_SelectedIndexChanged(object sender, EventArgs e)
         {
             RetornarCaracteristicas(cbTipo2.SelectedValue.ToString(), cbCaracteristica2);
+        }
+
+        private void dgvReglas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            id_regla = dgvReglas.CurrentRow.Cells["Id"].Value.ToString();
+            CN_Reglas objeto = new();
+            DataTable tabla = new();
+            tabla = objeto.RetornarRegla(id_regla);
+            cbTipo1.SelectedValue = tabla.Rows[0]["id_tipo_1"].ToString();
+            cbCaracteristica1.SelectedValue = tabla.Rows[0]["id_caracteristica_1"].ToString();
+            txtValor1.Text = tabla.Rows[0]["valor_1"].ToString();
+            cbOperador.Text = tabla.Rows[0]["operador"].ToString();
+            cbTipo2.SelectedValue = tabla.Rows[0]["id_tipo_2"].ToString();
+            cbCaracteristica2.SelectedValue = tabla.Rows[0]["id_caracteristica_2"].ToString();
+            txtValor2.Text = tabla.Rows[0]["valor_2"].ToString();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CN_Reglas objeto = new();
+                objeto.Eliminar(id_regla);
+                MessageBox.Show("Regla eliminada correctamente");
+                MostrarReglas();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar la regla: " + ex.Message);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void Limpiar()
+        {
+            id_regla = null;
+            cbTipo1.SelectedIndex = 0;
+            cbCaracteristica1.SelectedIndex = 0;
+            txtValor1.Text = "";
+            cbOperador.SelectedIndex = 0;
+            cbTipo2.SelectedIndex = 0;
+            cbCaracteristica2.SelectedIndex = 0;
+            txtValor2.Text = "";
         }
     }
 }

@@ -120,9 +120,9 @@
             label2.ForeColor = Color.DarkGray;
             label2.Location = new Point(89, 50);
             label2.Name = "label2";
-            label2.Size = new Size(139, 20);
+            label2.Size = new Size(156, 20);
             label2.TabIndex = 7;
-            label2.Text = "Equipos pendientes";
+            label2.Text = "Ensambles pendientes";
             // 
             // label4
             // 
@@ -163,9 +163,9 @@
             label5.ForeColor = Color.DarkGray;
             label5.Location = new Point(89, 50);
             label5.Name = "label5";
-            label5.Size = new Size(110, 20);
+            label5.Size = new Size(151, 20);
             label5.TabIndex = 7;
-            label5.Text = "Casos resueltos";
+            label5.Text = "Ensambles realizados";
             // 
             // label6
             // 
@@ -246,9 +246,9 @@
             label8.ForeColor = Color.WhiteSmoke;
             label8.Location = new Point(19, 13);
             label8.Name = "label8";
-            label8.Size = new Size(230, 28);
+            label8.Size = new Size(282, 28);
             label8.TabIndex = 9;
-            label8.Text = "Información de equipos";
+            label8.Text = "Información de componentes";
             // 
             // Dashboard
             // 

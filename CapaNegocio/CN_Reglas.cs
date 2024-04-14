@@ -32,5 +32,12 @@ namespace CapaNegocio
         {
             objeto.Eliminar(Convert.ToInt32(id_regla));
         }
+
+        public DataTable RetornarRegla(string id_regla)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objeto.RetornarRegla(Convert.ToInt32(id_regla));
+            return tabla;
+        }
     }
 }
