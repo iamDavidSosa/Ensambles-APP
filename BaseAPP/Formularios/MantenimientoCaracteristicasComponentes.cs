@@ -103,7 +103,7 @@ namespace BaseAPP.Formularios
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("¿Está seguro de eliminar la característica?", "Eliminar característica", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Está seguro de eliminar la característica?", "Eliminar característica", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 EliminarCaracteristica();
             }
@@ -111,12 +111,12 @@ namespace BaseAPP.Formularios
             {
                 Limpiar();
             }
-            
+
         }
 
         private void dgvCaracteristicas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvCaracteristicas.SelectedCells.Count > 0)
+            if (dgvCaracteristicas.SelectedCells.Count > 0)
             {
                 try
                 {
@@ -127,8 +127,15 @@ namespace BaseAPP.Formularios
                 {
                     MessageBox.Show("Error al seleccionar la característica: " + ex.Message);
                 }
-                
+
             }
+        }
+
+        private void pbCaracteristica_Click(object sender, EventArgs e)
+        {
+            Formularios.MantenimientoCaracteristicas mantenimientoCaracteristicas = new();
+            mantenimientoCaracteristicas.ShowDialog();
+            RetornarCaracteristicas(Formularios.MantenimientoComponentes.Id_tipo_componente);          
         }
     }
 }

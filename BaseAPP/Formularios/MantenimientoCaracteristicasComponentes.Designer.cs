@@ -147,6 +147,7 @@
             pbCaracteristica.SizeMode = PictureBoxSizeMode.StretchImage;
             pbCaracteristica.TabIndex = 36;
             pbCaracteristica.TabStop = false;
+            pbCaracteristica.Click += pbCaracteristica_Click;
             // 
             // cbCaracteristicas
             // 
