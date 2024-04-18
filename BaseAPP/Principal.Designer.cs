@@ -37,9 +37,9 @@
             panel2 = new Panel();
             label6 = new Label();
             button6 = new Button();
-            btnInventario = new Button();
-            button4 = new Button();
+            btnComponentes = new Button();
             btnReglas = new Button();
+            btnEnsambles = new Button();
             button2 = new Button();
             button1 = new Button();
             panel3 = new Panel();
@@ -123,9 +123,9 @@
             panel2.BackColor = Color.FromArgb(13, 50, 76);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(button6);
-            panel2.Controls.Add(btnInventario);
-            panel2.Controls.Add(button4);
+            panel2.Controls.Add(btnComponentes);
             panel2.Controls.Add(btnReglas);
+            panel2.Controls.Add(btnEnsambles);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(panel3);
@@ -165,44 +165,25 @@
             button6.TextImageRelation = TextImageRelation.TextBeforeImage;
             button6.UseVisualStyleBackColor = true;
             // 
-            // btnInventario
+            // btnComponentes
             // 
-            btnInventario.Dock = DockStyle.Top;
-            btnInventario.FlatAppearance.BorderSize = 0;
-            btnInventario.FlatStyle = FlatStyle.Flat;
-            btnInventario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnInventario.ForeColor = Color.LightGray;
-            btnInventario.Image = (Image)resources.GetObject("btnInventario.Image");
-            btnInventario.ImageAlign = ContentAlignment.MiddleRight;
-            btnInventario.Location = new Point(0, 357);
-            btnInventario.Name = "btnInventario";
-            btnInventario.Padding = new Padding(8, 0, 25, 0);
-            btnInventario.Size = new Size(237, 60);
-            btnInventario.TabIndex = 5;
-            btnInventario.Text = "Inventario";
-            btnInventario.TextAlign = ContentAlignment.MiddleLeft;
-            btnInventario.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnInventario.UseVisualStyleBackColor = true;
-            btnInventario.Click += btnInventario_Click;
-            // 
-            // button4
-            // 
-            button4.Dock = DockStyle.Top;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.LightGray;
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.ImageAlign = ContentAlignment.MiddleRight;
-            button4.Location = new Point(0, 297);
-            button4.Name = "button4";
-            button4.Padding = new Padding(8, 0, 25, 0);
-            button4.Size = new Size(237, 60);
-            button4.TabIndex = 4;
-            button4.Text = "Reglas de compatibilidad";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button4.UseVisualStyleBackColor = true;
+            btnComponentes.Dock = DockStyle.Top;
+            btnComponentes.FlatAppearance.BorderSize = 0;
+            btnComponentes.FlatStyle = FlatStyle.Flat;
+            btnComponentes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnComponentes.ForeColor = Color.LightGray;
+            btnComponentes.Image = (Image)resources.GetObject("btnComponentes.Image");
+            btnComponentes.ImageAlign = ContentAlignment.MiddleRight;
+            btnComponentes.Location = new Point(0, 357);
+            btnComponentes.Name = "btnComponentes";
+            btnComponentes.Padding = new Padding(8, 0, 25, 0);
+            btnComponentes.Size = new Size(237, 60);
+            btnComponentes.TabIndex = 5;
+            btnComponentes.Text = "Componentes";
+            btnComponentes.TextAlign = ContentAlignment.MiddleLeft;
+            btnComponentes.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnComponentes.UseVisualStyleBackColor = true;
+            btnComponentes.Click += btnComponentes_Click;
             // 
             // btnReglas
             // 
@@ -213,16 +194,36 @@
             btnReglas.ForeColor = Color.LightGray;
             btnReglas.Image = (Image)resources.GetObject("btnReglas.Image");
             btnReglas.ImageAlign = ContentAlignment.MiddleRight;
-            btnReglas.Location = new Point(0, 237);
+            btnReglas.Location = new Point(0, 297);
             btnReglas.Name = "btnReglas";
             btnReglas.Padding = new Padding(8, 0, 25, 0);
             btnReglas.Size = new Size(237, 60);
-            btnReglas.TabIndex = 3;
-            btnReglas.Text = "Ensambles";
+            btnReglas.TabIndex = 4;
+            btnReglas.Text = "Reglas de compatibilidad";
             btnReglas.TextAlign = ContentAlignment.MiddleLeft;
             btnReglas.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnReglas.UseVisualStyleBackColor = true;
-            btnReglas.Click += btnReglas_Click;
+            btnReglas.Click += btnReglas_Click_1;
+            // 
+            // btnEnsambles
+            // 
+            btnEnsambles.Dock = DockStyle.Top;
+            btnEnsambles.FlatAppearance.BorderSize = 0;
+            btnEnsambles.FlatStyle = FlatStyle.Flat;
+            btnEnsambles.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEnsambles.ForeColor = Color.LightGray;
+            btnEnsambles.Image = (Image)resources.GetObject("btnEnsambles.Image");
+            btnEnsambles.ImageAlign = ContentAlignment.MiddleRight;
+            btnEnsambles.Location = new Point(0, 237);
+            btnEnsambles.Name = "btnEnsambles";
+            btnEnsambles.Padding = new Padding(8, 0, 25, 0);
+            btnEnsambles.Size = new Size(237, 60);
+            btnEnsambles.TabIndex = 3;
+            btnEnsambles.Text = "Ensambles";
+            btnEnsambles.TextAlign = ContentAlignment.MiddleLeft;
+            btnEnsambles.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnEnsambles.UseVisualStyleBackColor = true;
+            btnEnsambles.Click += btnEnsambles_Click;
             // 
             // button2
             // 
@@ -412,9 +413,9 @@
         private Button button1;
         private Label label5;
         private Button button6;
-        private Button btnInventario;
-        private Button button4;
+        private Button btnComponentes;
         private Button btnReglas;
+        private Button btnEnsambles;
         private Button button2;
         private Label label6;
         private Panel panel4;

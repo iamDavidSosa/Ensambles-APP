@@ -162,7 +162,7 @@
         YII=
 </value>
   </data>
-  <data name="btnInventario.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnComponentes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAspJREFUWEftljtoU2EYhqOCoohFQVy0XgZR14Ig6uB1qIODoOJqQKHeB5WWEodO
@@ -180,7 +180,7 @@
         lZ7D/4xA4BdsXAO2EZs4TAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnReglas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAzdJREFUWEftl81LVFEYxqcig6AiIgisf6AEoaAWUdAHSBAYgZsCaxEtymnRwsAC
@@ -200,7 +200,7 @@
         7fHj7MEAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnReglas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnEnsambles.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAuZJREFUWEftlktoE1EUhuNbxAcIbly4UERFXelGlIJQFbXoQtsuXLgs7kSsKGqz

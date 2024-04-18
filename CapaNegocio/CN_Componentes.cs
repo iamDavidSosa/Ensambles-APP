@@ -52,5 +52,29 @@ namespace CapaNegocio
             DataTable tabla = componentes.RetornarMarcas();
             return tabla;
         }
+
+        public DataTable RetornarComponenteCompatible(string id_componente, string id_componente_siguiente, string id_tipo_ensamble)
+        {
+            CD_Componentes componentes = new CD_Componentes();
+            DataTable tabla = componentes.RetornarComponenteCompatible(Convert.ToInt32(id_componente), Convert.ToInt32(id_componente_siguiente), Convert.ToInt32(id_tipo_ensamble));
+            return tabla;
+        }
+
+        public DataTable RetornarComponenteInicial(string id_tipo_componente)
+        {
+            CD_Componentes componentes = new CD_Componentes();
+            DataTable tabla = componentes.RetornarComponenteInicial(Convert.ToInt32(id_tipo_componente));
+            return tabla;
+        }
+
+        public DataTable RetornarTiposEnsambles()
+        {
+            CD_Componentes componentes = new CD_Componentes();
+            DataTable tabla = componentes.RetornarTiposEnsambles();
+            return tabla;
+        }
+
+
+
     }
 }

@@ -49,7 +49,9 @@
             btnGuardar = new Button();
             label7 = new Label();
             btnLimpiar = new Button();
+            groupBox1 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)dgvReglas).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // cbCaracteristica2
@@ -59,7 +61,7 @@
             cbCaracteristica2.Font = new Font("Segoe UI", 10.8F);
             cbCaracteristica2.ForeColor = Color.WhiteSmoke;
             cbCaracteristica2.FormattingEnabled = true;
-            cbCaracteristica2.Location = new Point(578, 117);
+            cbCaracteristica2.Location = new Point(589, 130);
             cbCaracteristica2.Name = "cbCaracteristica2";
             cbCaracteristica2.Size = new Size(361, 33);
             cbCaracteristica2.TabIndex = 30;
@@ -71,7 +73,7 @@
             cbCaracteristica1.Font = new Font("Segoe UI", 10.8F);
             cbCaracteristica1.ForeColor = Color.WhiteSmoke;
             cbCaracteristica1.FormattingEnabled = true;
-            cbCaracteristica1.Location = new Point(16, 117);
+            cbCaracteristica1.Location = new Point(27, 130);
             cbCaracteristica1.Name = "cbCaracteristica1";
             cbCaracteristica1.Size = new Size(365, 33);
             cbCaracteristica1.TabIndex = 29;
@@ -81,7 +83,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
             label3.ForeColor = Color.LightGray;
-            label3.Location = new Point(574, 91);
+            label3.Location = new Point(585, 104);
             label3.Name = "label3";
             label3.Size = new Size(138, 23);
             label3.TabIndex = 28;
@@ -92,7 +94,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
             label2.ForeColor = Color.LightGray;
-            label2.Location = new Point(12, 91);
+            label2.Location = new Point(23, 104);
             label2.Name = "label2";
             label2.Size = new Size(138, 23);
             label2.TabIndex = 27;
@@ -105,7 +107,7 @@
             cbTipo1.Font = new Font("Segoe UI", 10.8F);
             cbTipo1.ForeColor = Color.WhiteSmoke;
             cbTipo1.FormattingEnabled = true;
-            cbTipo1.Location = new Point(16, 51);
+            cbTipo1.Location = new Point(27, 64);
             cbTipo1.Name = "cbTipo1";
             cbTipo1.Size = new Size(365, 33);
             cbTipo1.TabIndex = 32;
@@ -116,7 +118,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
             label1.ForeColor = Color.LightGray;
-            label1.Location = new Point(12, 25);
+            label1.Location = new Point(23, 38);
             label1.Name = "label1";
             label1.Size = new Size(196, 23);
             label1.TabIndex = 31;
@@ -129,7 +131,7 @@
             cbTipo2.Font = new Font("Segoe UI", 10.8F);
             cbTipo2.ForeColor = Color.WhiteSmoke;
             cbTipo2.FormattingEnabled = true;
-            cbTipo2.Location = new Point(578, 51);
+            cbTipo2.Location = new Point(589, 64);
             cbTipo2.Name = "cbTipo2";
             cbTipo2.Size = new Size(361, 33);
             cbTipo2.TabIndex = 34;
@@ -140,7 +142,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
             label4.ForeColor = Color.LightGray;
-            label4.Location = new Point(574, 25);
+            label4.Location = new Point(585, 38);
             label4.Name = "label4";
             label4.Size = new Size(196, 23);
             label4.TabIndex = 33;
@@ -152,7 +154,7 @@
             txtValor1.BorderStyle = BorderStyle.None;
             txtValor1.Font = new Font("Segoe UI", 10.8F);
             txtValor1.ForeColor = Color.WhiteSmoke;
-            txtValor1.Location = new Point(16, 183);
+            txtValor1.Location = new Point(27, 196);
             txtValor1.Multiline = true;
             txtValor1.Name = "txtValor1";
             txtValor1.Size = new Size(365, 29);
@@ -164,7 +166,7 @@
             txtValor2.BorderStyle = BorderStyle.None;
             txtValor2.Font = new Font("Segoe UI", 10.8F);
             txtValor2.ForeColor = Color.WhiteSmoke;
-            txtValor2.Location = new Point(578, 183);
+            txtValor2.Location = new Point(589, 196);
             txtValor2.Multiline = true;
             txtValor2.Name = "txtValor2";
             txtValor2.Size = new Size(361, 29);
@@ -175,7 +177,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
             label5.ForeColor = Color.LightGray;
-            label5.Location = new Point(574, 157);
+            label5.Location = new Point(585, 170);
             label5.Name = "label5";
             label5.Size = new Size(57, 23);
             label5.TabIndex = 37;
@@ -189,7 +191,7 @@
             cbOperador.ForeColor = Color.WhiteSmoke;
             cbOperador.FormattingEnabled = true;
             cbOperador.Items.AddRange(new object[] { "=", ">", "<" });
-            cbOperador.Location = new Point(416, 101);
+            cbOperador.Location = new Point(427, 114);
             cbOperador.Name = "cbOperador";
             cbOperador.Size = new Size(125, 33);
             cbOperador.TabIndex = 39;
@@ -199,7 +201,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
             label6.ForeColor = Color.LightGray;
-            label6.Location = new Point(429, 75);
+            label6.Location = new Point(440, 88);
             label6.Name = "label6";
             label6.Size = new Size(93, 23);
             label6.TabIndex = 40;
@@ -229,7 +231,7 @@
             dgvReglas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvReglas.EnableHeadersVisualStyles = false;
             dgvReglas.GridColor = SystemColors.MenuBar;
-            dgvReglas.Location = new Point(18, 300);
+            dgvReglas.Location = new Point(12, 342);
             dgvReglas.MultiSelect = false;
             dgvReglas.Name = "dgvReglas";
             dgvReglas.ReadOnly = true;
@@ -244,7 +246,7 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.White;
             dgvReglas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvReglas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvReglas.Size = new Size(1123, 374);
+            dgvReglas.Size = new Size(1123, 329);
             dgvReglas.TabIndex = 41;
             dgvReglas.CellClick += dgvReglas_CellClick;
             // 
@@ -256,7 +258,7 @@
             btnEliminar.ForeColor = SystemColors.ControlLight;
             btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
             btnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEliminar.Location = new Point(204, 239);
+            btnEliminar.Location = new Point(204, 289);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Padding = new Padding(20, 0, 0, 0);
             btnEliminar.Size = new Size(177, 39);
@@ -273,7 +275,7 @@
             btnGuardar.ForeColor = SystemColors.ControlLight;
             btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
             btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(16, 239);
+            btnGuardar.Location = new Point(16, 289);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Padding = new Padding(20, 0, 0, 0);
             btnGuardar.Size = new Size(179, 39);
@@ -287,7 +289,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
             label7.ForeColor = Color.LightGray;
-            label7.Location = new Point(12, 157);
+            label7.Location = new Point(23, 170);
             label7.Name = "label7";
             label7.Size = new Size(57, 23);
             label7.TabIndex = 44;
@@ -301,7 +303,7 @@
             btnLimpiar.ForeColor = SystemColors.ControlLight;
             btnLimpiar.Image = (Image)resources.GetObject("btnLimpiar.Image");
             btnLimpiar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLimpiar.Location = new Point(389, 239);
+            btnLimpiar.Location = new Point(389, 289);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Padding = new Padding(20, 0, 0, 0);
             btnLimpiar.Size = new Size(177, 39);
@@ -310,37 +312,49 @@
             btnLimpiar.UseVisualStyleBackColor = false;
             btnLimpiar.Click += btnLimpiar_Click;
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label7);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(cbCaracteristica1);
+            groupBox1.Controls.Add(cbCaracteristica2);
+            groupBox1.Controls.Add(cbTipo1);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(cbOperador);
+            groupBox1.Controls.Add(cbTipo2);
+            groupBox1.Controls.Add(txtValor2);
+            groupBox1.Controls.Add(txtValor1);
+            groupBox1.Controls.Add(label5);
+            groupBox1.ForeColor = SystemColors.ControlLight;
+            groupBox1.Location = new Point(12, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(1123, 266);
+            groupBox1.TabIndex = 46;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Creación de reglas";
+            // 
             // MantenimientoReglasCompatibilidad
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(11, 33, 50);
             ClientSize = new Size(1153, 697);
+            Controls.Add(groupBox1);
             Controls.Add(btnLimpiar);
-            Controls.Add(label7);
             Controls.Add(btnEliminar);
             Controls.Add(btnGuardar);
             Controls.Add(dgvReglas);
-            Controls.Add(label6);
-            Controls.Add(cbOperador);
-            Controls.Add(txtValor2);
-            Controls.Add(label5);
-            Controls.Add(txtValor1);
-            Controls.Add(cbTipo2);
-            Controls.Add(label4);
-            Controls.Add(cbTipo1);
-            Controls.Add(label1);
-            Controls.Add(cbCaracteristica2);
-            Controls.Add(cbCaracteristica1);
-            Controls.Add(label3);
-            Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MantenimientoReglasCompatibilidad";
             Text = "MantenimientoReglasCompatibilidad";
             Load += MantenimientoReglasCompatibilidad_Load;
             ((System.ComponentModel.ISupportInitialize)dgvReglas).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -363,5 +377,6 @@
         private Button btnGuardar;
         private Label label7;
         private Button btnLimpiar;
+        private GroupBox groupBox1;
     }
 }

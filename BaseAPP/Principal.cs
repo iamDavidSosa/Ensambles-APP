@@ -22,14 +22,6 @@ namespace BaseAPP
             form.Show();
         }
 
-        private void btnInventario_Click(object sender, EventArgs e)
-        {
-            ChangeForm(new MantenimientoComponentes());
-            lblTitulo.Text = "Mantenimiento Componentes";
-            pbTitulo.Image = Properties.Resources.gcard;
-        }
-
-        //Que el pbSalir cierra la aplicación
         private void pbSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -43,11 +35,25 @@ namespace BaseAPP
             }
         }
 
-        private void btnReglas_Click(object sender, EventArgs e)
+        private void btnReglas_Click_1(object sender, EventArgs e)
         {
             ChangeForm(new MantenimientoReglasCompatibilidad());
             lblTitulo.Text = "Mantenimiento Reglas de Compatibilidad";
             pbTitulo.Image = Properties.Resources.reglas1;
+        }
+
+        private void btnEnsambles_Click(object sender, EventArgs e)
+        {
+            ChangeForm(new GeneradorEnsambles());
+            lblTitulo.Text = "Generador de Ensambles";
+            pbTitulo.Image = Properties.Resources.ensamble;
+        }
+
+        private void btnComponentes_Click(object sender, EventArgs e)
+        {
+            ChangeForm(new MantenimientoComponentes());
+            lblTitulo.Text = "Mantenimiento Componentes";
+            pbTitulo.Image = Properties.Resources.gcard;
         }
     }
 }

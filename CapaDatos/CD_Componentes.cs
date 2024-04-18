@@ -97,5 +97,49 @@ namespace CapaDatos
             conexion.CerrarConexion();
             return tabla;
         }
+
+        public DataTable RetornarComponenteCompatible(Int32 id_componente, Int32 id_componente_siguiente, Int32 id_tipo_ensamble)
+        {
+            comando.Parameters.Clear();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "RetornarComponenteFiltrado";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id_componente_actual", id_componente);
+            comando.Parameters.AddWithValue("@id_componente_siguiente", id_componente_siguiente);
+            comando.Parameters.AddWithValue("@id_tipo_ensamble", id_tipo_ensamble);
+            leer = comando.ExecuteReader();
+            comando.Parameters.Clear();
+            tabla.Load(leer);
+            conexion.CerrarConexion();
+            return tabla;
+        }
+
+        public DataTable RetornarComponenteInicial(Int32 id_tipo_componente)
+        {
+            comando.Parameters.Clear();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "RetornarComponenteInicial";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id_tipo_componente", id_tipo_componente);
+            leer = comando.ExecuteReader();
+            comando.Parameters.Clear();
+            tabla.Load(leer);
+            conexion.CerrarConexion();
+            return tabla;
+        }
+
+        public DataTable RetornarTiposEnsambles()
+        {
+            comando.Parameters.Clear();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "RetornarTiposEnsambles";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            comando.Parameters.Clear();
+            tabla.Load(leer);
+            conexion.CerrarConexion();
+            return tabla;
+            
+        }
     }
 }
