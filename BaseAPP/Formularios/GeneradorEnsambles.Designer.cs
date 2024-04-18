@@ -35,8 +35,8 @@
             cbTipoEnsamble = new ComboBox();
             groupBox2 = new GroupBox();
             label4 = new Label();
-            textBox1 = new TextBox();
-            txtModelo = new TextBox();
+            txtMaximo = new TextBox();
+            txtMinimo = new TextBox();
             label3 = new Label();
             label1 = new Label();
             gbComponentes = new GroupBox();
@@ -64,6 +64,37 @@
             cbEspecificar = new CheckBox();
             btnEnsamble = new Button();
             groupBox4 = new GroupBox();
+            lblPrecio = new Label();
+            lblPrecioT = new Label();
+            Count = new Label();
+            panel7 = new Panel();
+            PRE7 = new Label();
+            DESC7 = new Label();
+            ID7 = new Label();
+            panel6 = new Panel();
+            PRE6 = new Label();
+            DESC6 = new Label();
+            ID6 = new Label();
+            panel5 = new Panel();
+            PRE5 = new Label();
+            DESC5 = new Label();
+            ID5 = new Label();
+            panel4 = new Panel();
+            PRE4 = new Label();
+            DESC4 = new Label();
+            ID4 = new Label();
+            panel2 = new Panel();
+            PRE2 = new Label();
+            DESC2 = new Label();
+            ID2 = new Label();
+            panel1 = new Panel();
+            PRE1 = new Label();
+            DESC1 = new Label();
+            ID1 = new Label();
+            panel3 = new Panel();
+            PRE3 = new Label();
+            DESC3 = new Label();
+            ID3 = new Label();
             label12 = new Label();
             button1 = new Button();
             groupBox1.SuspendLayout();
@@ -71,6 +102,13 @@
             groupBox2.SuspendLayout();
             gbComponentes.SuspendLayout();
             groupBox4.SuspendLayout();
+            panel7.SuspendLayout();
+            panel6.SuspendLayout();
+            panel5.SuspendLayout();
+            panel4.SuspendLayout();
+            panel2.SuspendLayout();
+            panel1.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -123,8 +161,8 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(label4);
-            groupBox2.Controls.Add(textBox1);
-            groupBox2.Controls.Add(txtModelo);
+            groupBox2.Controls.Add(txtMaximo);
+            groupBox2.Controls.Add(txtMinimo);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(label1);
             groupBox2.ForeColor = SystemColors.ControlLight;
@@ -146,29 +184,29 @@
             label4.TabIndex = 32;
             label4.Text = ":";
             // 
-            // textBox1
+            // txtMaximo
             // 
-            textBox1.BackColor = Color.FromArgb(13, 50, 76);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 10.8F);
-            textBox1.ForeColor = Color.WhiteSmoke;
-            textBox1.Location = new Point(268, 59);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(211, 29);
-            textBox1.TabIndex = 31;
+            txtMaximo.BackColor = Color.FromArgb(13, 50, 76);
+            txtMaximo.BorderStyle = BorderStyle.None;
+            txtMaximo.Font = new Font("Segoe UI", 10.8F);
+            txtMaximo.ForeColor = Color.WhiteSmoke;
+            txtMaximo.Location = new Point(268, 59);
+            txtMaximo.Multiline = true;
+            txtMaximo.Name = "txtMaximo";
+            txtMaximo.Size = new Size(211, 29);
+            txtMaximo.TabIndex = 31;
             // 
-            // txtModelo
+            // txtMinimo
             // 
-            txtModelo.BackColor = Color.FromArgb(13, 50, 76);
-            txtModelo.BorderStyle = BorderStyle.None;
-            txtModelo.Font = new Font("Segoe UI", 10.8F);
-            txtModelo.ForeColor = Color.WhiteSmoke;
-            txtModelo.Location = new Point(21, 59);
-            txtModelo.Multiline = true;
-            txtModelo.Name = "txtModelo";
-            txtModelo.Size = new Size(211, 29);
-            txtModelo.TabIndex = 30;
+            txtMinimo.BackColor = Color.FromArgb(13, 50, 76);
+            txtMinimo.BorderStyle = BorderStyle.None;
+            txtMinimo.Font = new Font("Segoe UI", 10.8F);
+            txtMinimo.ForeColor = Color.WhiteSmoke;
+            txtMinimo.Location = new Point(21, 59);
+            txtMinimo.Multiline = true;
+            txtMinimo.Name = "txtMinimo";
+            txtMinimo.Size = new Size(211, 29);
+            txtMinimo.TabIndex = 30;
             // 
             // label3
             // 
@@ -486,25 +524,378 @@
             // 
             // groupBox4
             // 
+            groupBox4.Controls.Add(lblPrecio);
+            groupBox4.Controls.Add(lblPrecioT);
+            groupBox4.Controls.Add(Count);
+            groupBox4.Controls.Add(panel7);
+            groupBox4.Controls.Add(panel6);
+            groupBox4.Controls.Add(panel5);
+            groupBox4.Controls.Add(panel4);
+            groupBox4.Controls.Add(panel2);
+            groupBox4.Controls.Add(panel1);
+            groupBox4.Controls.Add(panel3);
             groupBox4.Controls.Add(label12);
             groupBox4.ForeColor = SystemColors.ControlLight;
-            groupBox4.Location = new Point(584, 12);
+            groupBox4.Location = new Point(563, 12);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(538, 623);
+            groupBox4.Size = new Size(580, 623);
             groupBox4.TabIndex = 29;
             groupBox4.TabStop = false;
             groupBox4.Text = "Ensamble";
+            // 
+            // lblPrecio
+            // 
+            lblPrecio.AutoSize = true;
+            lblPrecio.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblPrecio.ForeColor = Color.LightGray;
+            lblPrecio.Location = new Point(322, 530);
+            lblPrecio.Name = "lblPrecio";
+            lblPrecio.Size = new Size(67, 28);
+            lblPrecio.TabIndex = 34;
+            lblPrecio.Text = "65000";
+            lblPrecio.Visible = false;
+            // 
+            // lblPrecioT
+            // 
+            lblPrecioT.AutoSize = true;
+            lblPrecioT.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPrecioT.ForeColor = Color.LightGray;
+            lblPrecioT.Location = new Point(322, 497);
+            lblPrecioT.Name = "lblPrecioT";
+            lblPrecioT.Size = new Size(127, 28);
+            lblPrecioT.TabIndex = 39;
+            lblPrecioT.Text = "Precio total:";
+            lblPrecioT.Visible = false;
+            // 
+            // Count
+            // 
+            Count.AutoSize = true;
+            Count.Font = new Font("Segoe UI Black", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Count.ForeColor = Color.LightGray;
+            Count.Location = new Point(222, 25);
+            Count.Name = "Count";
+            Count.Size = new Size(20, 23);
+            Count.TabIndex = 34;
+            Count.Text = "0";
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(13, 50, 76);
+            panel7.Controls.Add(PRE7);
+            panel7.Controls.Add(DESC7);
+            panel7.Controls.Add(ID7);
+            panel7.Location = new Point(12, 466);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(275, 128);
+            panel7.TabIndex = 38;
+            panel7.Visible = false;
+            // 
+            // PRE7
+            // 
+            PRE7.AutoSize = true;
+            PRE7.Font = new Font("Segoe UI", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            PRE7.ForeColor = Color.LightGray;
+            PRE7.Location = new Point(8, 95);
+            PRE7.Name = "PRE7";
+            PRE7.Size = new Size(55, 23);
+            PRE7.TabIndex = 33;
+            PRE7.Text = "65000";
+            // 
+            // DESC7
+            // 
+            DESC7.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DESC7.ForeColor = Color.LightGray;
+            DESC7.Location = new Point(8, 38);
+            DESC7.Name = "DESC7";
+            DESC7.Size = new Size(198, 54);
+            DESC7.TabIndex = 30;
+            DESC7.Text = "Almacenamiento Western Digital WD7080";
+            // 
+            // ID7
+            // 
+            ID7.AutoSize = true;
+            ID7.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ID7.ForeColor = Color.LightGray;
+            ID7.Location = new Point(8, 10);
+            ID7.Name = "ID7";
+            ID7.Size = new Size(27, 23);
+            ID7.TabIndex = 29;
+            ID7.Text = "ID";
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(13, 50, 76);
+            panel6.Controls.Add(PRE6);
+            panel6.Controls.Add(DESC6);
+            panel6.Controls.Add(ID6);
+            panel6.Location = new Point(293, 330);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(275, 128);
+            panel6.TabIndex = 38;
+            panel6.Visible = false;
+            // 
+            // PRE6
+            // 
+            PRE6.AutoSize = true;
+            PRE6.Font = new Font("Segoe UI", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            PRE6.ForeColor = Color.LightGray;
+            PRE6.Location = new Point(8, 95);
+            PRE6.Name = "PRE6";
+            PRE6.Size = new Size(55, 23);
+            PRE6.TabIndex = 33;
+            PRE6.Text = "65000";
+            // 
+            // DESC6
+            // 
+            DESC6.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DESC6.ForeColor = Color.LightGray;
+            DESC6.Location = new Point(8, 38);
+            DESC6.Name = "DESC6";
+            DESC6.Size = new Size(198, 54);
+            DESC6.TabIndex = 30;
+            DESC6.Text = "Almacenamiento Western Digital WD7080";
+            // 
+            // ID6
+            // 
+            ID6.AutoSize = true;
+            ID6.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ID6.ForeColor = Color.LightGray;
+            ID6.Location = new Point(8, 10);
+            ID6.Name = "ID6";
+            ID6.Size = new Size(27, 23);
+            ID6.TabIndex = 29;
+            ID6.Text = "ID";
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(13, 50, 76);
+            panel5.Controls.Add(PRE5);
+            panel5.Controls.Add(DESC5);
+            panel5.Controls.Add(ID5);
+            panel5.Location = new Point(12, 330);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(275, 128);
+            panel5.TabIndex = 37;
+            panel5.Visible = false;
+            // 
+            // PRE5
+            // 
+            PRE5.AutoSize = true;
+            PRE5.Font = new Font("Segoe UI", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            PRE5.ForeColor = Color.LightGray;
+            PRE5.Location = new Point(8, 95);
+            PRE5.Name = "PRE5";
+            PRE5.Size = new Size(55, 23);
+            PRE5.TabIndex = 33;
+            PRE5.Text = "65000";
+            // 
+            // DESC5
+            // 
+            DESC5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DESC5.ForeColor = Color.LightGray;
+            DESC5.Location = new Point(8, 38);
+            DESC5.Name = "DESC5";
+            DESC5.Size = new Size(198, 54);
+            DESC5.TabIndex = 30;
+            DESC5.Text = "Almacenamiento Western Digital WD7080";
+            // 
+            // ID5
+            // 
+            ID5.AutoSize = true;
+            ID5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ID5.ForeColor = Color.LightGray;
+            ID5.Location = new Point(8, 10);
+            ID5.Name = "ID5";
+            ID5.Size = new Size(27, 23);
+            ID5.TabIndex = 29;
+            ID5.Text = "ID";
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(13, 50, 76);
+            panel4.Controls.Add(PRE4);
+            panel4.Controls.Add(DESC4);
+            panel4.Controls.Add(ID4);
+            panel4.Location = new Point(293, 193);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(275, 128);
+            panel4.TabIndex = 36;
+            panel4.Visible = false;
+            // 
+            // PRE4
+            // 
+            PRE4.AutoSize = true;
+            PRE4.Font = new Font("Segoe UI", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            PRE4.ForeColor = Color.LightGray;
+            PRE4.Location = new Point(8, 95);
+            PRE4.Name = "PRE4";
+            PRE4.Size = new Size(55, 23);
+            PRE4.TabIndex = 33;
+            PRE4.Text = "65000";
+            // 
+            // DESC4
+            // 
+            DESC4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DESC4.ForeColor = Color.LightGray;
+            DESC4.Location = new Point(8, 38);
+            DESC4.Name = "DESC4";
+            DESC4.Size = new Size(198, 54);
+            DESC4.TabIndex = 30;
+            DESC4.Text = "Almacenamiento Western Digital WD7080";
+            // 
+            // ID4
+            // 
+            ID4.AutoSize = true;
+            ID4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ID4.ForeColor = Color.LightGray;
+            ID4.Location = new Point(8, 10);
+            ID4.Name = "ID4";
+            ID4.Size = new Size(27, 23);
+            ID4.TabIndex = 29;
+            ID4.Text = "ID";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(13, 50, 76);
+            panel2.Controls.Add(PRE2);
+            panel2.Controls.Add(DESC2);
+            panel2.Controls.Add(ID2);
+            panel2.Location = new Point(293, 57);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(275, 128);
+            panel2.TabIndex = 34;
+            panel2.Visible = false;
+            // 
+            // PRE2
+            // 
+            PRE2.AutoSize = true;
+            PRE2.Font = new Font("Segoe UI", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            PRE2.ForeColor = Color.LightGray;
+            PRE2.Location = new Point(8, 95);
+            PRE2.Name = "PRE2";
+            PRE2.Size = new Size(55, 23);
+            PRE2.TabIndex = 33;
+            PRE2.Text = "65000";
+            // 
+            // DESC2
+            // 
+            DESC2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DESC2.ForeColor = Color.LightGray;
+            DESC2.Location = new Point(8, 38);
+            DESC2.Name = "DESC2";
+            DESC2.Size = new Size(198, 54);
+            DESC2.TabIndex = 30;
+            DESC2.Text = "Almacenamiento Western Digital WD7080";
+            // 
+            // ID2
+            // 
+            ID2.AutoSize = true;
+            ID2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ID2.ForeColor = Color.LightGray;
+            ID2.Location = new Point(8, 10);
+            ID2.Name = "ID2";
+            ID2.Size = new Size(27, 23);
+            ID2.TabIndex = 29;
+            ID2.Text = "ID";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(13, 50, 76);
+            panel1.Controls.Add(PRE1);
+            panel1.Controls.Add(DESC1);
+            panel1.Controls.Add(ID1);
+            panel1.Location = new Point(12, 57);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(275, 128);
+            panel1.TabIndex = 30;
+            panel1.Visible = false;
+            // 
+            // PRE1
+            // 
+            PRE1.AutoSize = true;
+            PRE1.Font = new Font("Segoe UI", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            PRE1.ForeColor = Color.LightGray;
+            PRE1.Location = new Point(8, 95);
+            PRE1.Name = "PRE1";
+            PRE1.Size = new Size(55, 23);
+            PRE1.TabIndex = 33;
+            PRE1.Text = "65000";
+            // 
+            // DESC1
+            // 
+            DESC1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DESC1.ForeColor = Color.LightGray;
+            DESC1.Location = new Point(8, 38);
+            DESC1.Name = "DESC1";
+            DESC1.Size = new Size(198, 54);
+            DESC1.TabIndex = 30;
+            DESC1.Text = "Almacenamiento Western Digital WD7080";
+            // 
+            // ID1
+            // 
+            ID1.AutoSize = true;
+            ID1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ID1.ForeColor = Color.LightGray;
+            ID1.Location = new Point(8, 10);
+            ID1.Name = "ID1";
+            ID1.Size = new Size(27, 23);
+            ID1.TabIndex = 29;
+            ID1.Text = "ID";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(13, 50, 76);
+            panel3.Controls.Add(PRE3);
+            panel3.Controls.Add(DESC3);
+            panel3.Controls.Add(ID3);
+            panel3.Location = new Point(12, 193);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(275, 128);
+            panel3.TabIndex = 35;
+            panel3.Visible = false;
+            // 
+            // PRE3
+            // 
+            PRE3.AutoSize = true;
+            PRE3.Font = new Font("Segoe UI", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            PRE3.ForeColor = Color.LightGray;
+            PRE3.Location = new Point(8, 95);
+            PRE3.Name = "PRE3";
+            PRE3.Size = new Size(55, 23);
+            PRE3.TabIndex = 33;
+            PRE3.Text = "65000";
+            // 
+            // DESC3
+            // 
+            DESC3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DESC3.ForeColor = Color.LightGray;
+            DESC3.Location = new Point(8, 38);
+            DESC3.Name = "DESC3";
+            DESC3.Size = new Size(198, 54);
+            DESC3.TabIndex = 30;
+            DESC3.Text = "Almacenamiento Western Digital WD7080";
+            // 
+            // ID3
+            // 
+            ID3.AutoSize = true;
+            ID3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ID3.ForeColor = Color.LightGray;
+            ID3.Location = new Point(8, 10);
+            ID3.Name = "ID3";
+            ID3.Size = new Size(27, 23);
+            ID3.TabIndex = 29;
+            ID3.Text = "ID";
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.LightGray;
-            label12.Location = new Point(16, 30);
+            label12.Location = new Point(13, 25);
             label12.Name = "label12";
-            label12.Size = new Size(165, 23);
+            label12.Size = new Size(203, 23);
             label12.TabIndex = 29;
-            label12.Text = "Ensamble generado:";
+            label12.Text = "Ensamble(s) generado(s):";
             // 
             // button1
             // 
@@ -548,6 +939,20 @@
             gbComponentes.PerformLayout();
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -563,9 +968,9 @@
         private Label label2;
         private Label label3;
         private Label label1;
-        private TextBox txtModelo;
+        private TextBox txtMinimo;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox txtMaximo;
         private PictureBox pbTiposEnsambles;
         private ComboBox comboBox3;
         private Label label7;
@@ -591,5 +996,36 @@
         private GroupBox groupBox4;
         private Label label12;
         private Button button1;
+        private Panel panel1;
+        private Label DESC1;
+        private Label ID1;
+        private Panel panel6;
+        private Label PRE6;
+        private Label DESC6;
+        private Label ID6;
+        private Panel panel5;
+        private Panel panel7;
+        private Label PRE7;
+        private Label DESC7;
+        private Label ID7;
+        private Label PRE5;
+        private Label DESC5;
+        private Label ID5;
+        private Panel panel4;
+        private Label PRE4;
+        private Label DESC4;
+        private Label ID4;
+        private Panel panel2;
+        private Label PRE2;
+        private Label DESC2;
+        private Label ID2;
+        private Label PRE1;
+        private Panel panel3;
+        private Label PRE3;
+        private Label DESC3;
+        private Label ID3;
+        private Label lblPrecio;
+        private Label lblPrecioT;
+        private Label Count;
     }
 }

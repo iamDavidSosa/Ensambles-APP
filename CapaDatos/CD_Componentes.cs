@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 
 namespace CapaDatos
 {
@@ -140,6 +141,40 @@ namespace CapaDatos
             conexion.CerrarConexion();
             return tabla;
             
+        }
+
+        public DataTable RetornarPrecioEnsamble(Int32 id_motherboard, Int32 id_procesador, Int32 id_memoria_ram, Int32 id_memoria_rom, Int32 id_tarjeta_grafica, Int32 id_case, Int32 id_fuente)
+        {
+            comando.Parameters.Clear();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "RetornarPrecioEnsamble";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id_motherboard", id_motherboard);
+            comando.Parameters.AddWithValue("@id_procesador", id_procesador);
+            comando.Parameters.AddWithValue("@id_memoria_ram", id_memoria_ram);
+            comando.Parameters.AddWithValue("@id_memoria_rom", id_memoria_rom);
+            comando.Parameters.AddWithValue("@id_tarjeta_grafica", id_tarjeta_grafica);
+            comando.Parameters.AddWithValue("@id_case", id_case);
+            comando.Parameters.AddWithValue("@id_fuente", id_fuente);
+            leer = comando.ExecuteReader();
+            comando.Parameters.Clear();
+            tabla.Load(leer);
+            conexion.CerrarConexion();
+            return tabla;
+        }
+
+        public DataTable RetornarDatosComponentes(Int32 id_componente)
+        {
+            comando.Parameters.Clear();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "RetornarDatosComponentes";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id_componente", id_componente);
+            leer = comando.ExecuteReader();
+            comando.Parameters.Clear();
+            tabla.Load(leer);
+            conexion.CerrarConexion();
+            return tabla;
         }
     }
 }

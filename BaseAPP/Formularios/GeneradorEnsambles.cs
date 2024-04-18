@@ -32,6 +32,8 @@ namespace BaseAPP.Formularios
         List<Componente> listaMotherboard, listaProcesadores, listaMemoriasRAM = new();
         List<Componente> listaROM = new();
         List<Componente> listaTarjetaGrafica = new();
+        List<Componente> listaCase = new();
+        List<Componente> listaFuentePoder = new();
 
         public GeneradorEnsambles()
         {
@@ -107,6 +109,10 @@ namespace BaseAPP.Formularios
 
         private void ArmarEnsamble()
         {
+            double precio_total = 0;
+            bool visible = false;
+            CN_Componentes obj_busqueda= new();
+            DataTable tabla = new();
             try
             {
                 LlenarListaMotherBoard();
@@ -118,6 +124,8 @@ namespace BaseAPP.Formularios
                     LlenarListaMemoriasRAM(componente.IdComponente.ToString(), "3", id_tipo_ensamble);
                     LlenarListaROM(componente.IdComponente.ToString(), "4", id_tipo_ensamble);
                     LlenarListaTarjetaGrafica(componente.IdComponente.ToString(), "2", id_tipo_ensamble);
+                    LlenarListaCase(componente.IdComponente.ToString(), "6", id_tipo_ensamble);
+                    LlenarListaFuentePoder(componente.IdComponente.ToString(), "5", id_tipo_ensamble);
 
                     if (listaProcesadores.Count == 0)
                     {
@@ -151,8 +159,57 @@ namespace BaseAPP.Formularios
                                             {
                                                 foreach (Componente tarjetaGrafica in listaTarjetaGrafica)
                                                 {
-                                                    contador++;
-                                                    MessageBox.Show("Motherboard: " + componente.IdComponente + " Procesador: " + procesador.IdComponente + " Memoria RAM: " + memoriaRAM.IdComponente + " ROM: " + rom.IdComponente + " Tarjeta Grafica: " + tarjetaGrafica.IdComponente);
+                                                    if(listaCase.Count == 0)
+                                                    {
+                                                        MessageBox.Show("No hay cases compatibles con la motherboard: " + componente.IdComponente);
+                                                    }
+                                                    else
+                                                    {
+                                                        foreach (Componente case_ in listaCase)
+                                                        {
+                                                            if (listaFuentePoder.Count == 0)
+                                                            {
+                                                                MessageBox.Show("No hay fuentes de poder compatibles con la motherboard: " + componente.IdComponente);
+                                                            }
+                                                            else
+                                                            {
+                                                                foreach (Componente fuentePoder in listaFuentePoder)
+                                                                {
+                                                                   
+                                                                    tabla = obj_busqueda.RetornarPrecioEnsamble(componente.IdComponente.ToString(), procesador.IdComponente.ToString(), memoriaRAM.IdComponente.ToString(), rom.IdComponente.ToString(), tarjetaGrafica.IdComponente.ToString(), case_.IdComponente.ToString(), fuentePoder.IdComponente.ToString());  
+                                                                    precio_total = Convert.ToDouble(tabla.Rows[0]["precio_total"]);
+
+                                                                    if (FiltrarPorPrecio(precio_total))
+                                                                    {
+                                                                        if(visible == false)
+                                                                        {
+                                                                            panel1.Visible = true;
+                                                                            panel2.Visible = true;
+                                                                            panel3.Visible = true;
+                                                                            panel4.Visible = true;
+                                                                            panel5.Visible = true;
+                                                                            panel6.Visible = true;
+                                                                            panel7.Visible = true;
+                                                                            lblPrecio.Visible = true;
+                                                                            lblPrecioT.Visible = true; 
+                                                                            visible = true;
+                                                                        }
+                                                                        contador++;
+                                                                        MostrarEnsamble(componente.IdComponente.ToString(), ID1, DESC1, PRE1);
+                                                                        MostrarEnsamble(procesador.IdComponente.ToString(), ID2, DESC2, PRE2);
+                                                                        MostrarEnsamble(memoriaRAM.IdComponente.ToString(), ID3, DESC3, PRE3);
+                                                                        MostrarEnsamble(rom.IdComponente.ToString(), ID4, DESC4, PRE4);
+                                                                        MostrarEnsamble(tarjetaGrafica.IdComponente.ToString(), ID5, DESC5, PRE5);
+                                                                        MostrarEnsamble(case_.IdComponente.ToString(), ID6, DESC6, PRE6);
+                                                                        MostrarEnsamble(fuentePoder.IdComponente.ToString(), ID7, DESC7, PRE7);
+                                                                        Count.Text = contador.ToString();
+                                                                        lblPrecio.Text=precio_total.ToString();
+                                                                        MessageBox.Show("Ver siguiente ensamble");
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
                                                 }
                                             }
                                         }
@@ -192,6 +249,49 @@ namespace BaseAPP.Formularios
             {
                 MessageBox.Show("Error al cargar los componentess: " + ex.Message);
             }
+        }
+
+        private void MostrarEnsamble(string id_componente, Label lbl, Label lbl2, Label lbl3)
+        {
+            try
+            {
+                CN_Componentes componentes = new();
+                DataTable tabla = componentes.RetornarDatosComponentes(id_componente);
+                if (tabla.Rows.Count > 0)
+                {
+                    DataRow row = tabla.Rows[0];
+                    lbl.Text = row["ID"].ToString();
+                    lbl2.Text = row["Componente"].ToString();
+                    lbl3.Text = row["Precio"].ToString();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los componentes: " + ex.Message);
+            }
+        }
+
+        private bool FiltrarPorPrecio(double precio)
+        {
+            if(txtMinimo.Text != "" && txtMaximo.Text != "")
+            {
+                double minimo = Convert.ToDouble(txtMinimo.Text);
+                double maximo = Convert.ToDouble(txtMaximo.Text);
+                if (precio >= minimo && precio <= maximo)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;   
+                }
+            }
+            else
+            {
+                return true;                
+            }   
         }
 
         private void LlenarListaProcesadores(string id_componente, string id_componente_siguiente, string id_tipo_ensamble)
@@ -276,6 +376,54 @@ namespace BaseAPP.Formularios
                 {
                     DataRow row = tabla.Rows[0];
                     listaTarjetaGrafica = tabla.AsEnumerable()
+                    .Select(row => new Componente
+                    {
+                        IdComponente = row.Field<int>("id_componente"),
+                        IdTipoComponente = row.Field<int>("id_tipo_componente")
+                    })
+                    .ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los componentes: " + ex.Message);
+            }
+        }
+
+        private void LlenarListaCase(string id_componente, string id_componente_siguiente, string id_tipo_ensamble)
+        {
+            try
+            {
+                CN_Componentes componentes = new();
+                DataTable tabla = componentes.RetornarComponenteCompatible(id_componente, id_componente_siguiente, id_tipo_ensamble);
+                if (tabla.Rows.Count > 0)
+                {
+                    DataRow row = tabla.Rows[0];
+                    listaCase = tabla.AsEnumerable()
+                    .Select(row => new Componente
+                    {
+                        IdComponente = row.Field<int>("id_componente"),
+                        IdTipoComponente = row.Field<int>("id_tipo_componente")
+                    })
+                    .ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los componentes: " + ex.Message);
+            }
+        }
+
+        private void LlenarListaFuentePoder(string id_componente, string id_componente_siguiente, string id_tipo_ensamble)
+        {
+            try
+            {
+                CN_Componentes componentes = new();
+                DataTable tabla = componentes.RetornarComponenteCompatible(id_componente, id_componente_siguiente, id_tipo_ensamble);
+                if (tabla.Rows.Count > 0)
+                {
+                    DataRow row = tabla.Rows[0];
+                    listaFuentePoder = tabla.AsEnumerable()
                     .Select(row => new Componente
                     {
                         IdComponente = row.Field<int>("id_componente"),

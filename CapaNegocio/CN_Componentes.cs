@@ -74,7 +74,18 @@ namespace CapaNegocio
             return tabla;
         }
 
+        public DataTable RetornarPrecioEnsamble(string id_motherboard, string id_procesador, string id_memoria_ram, string id_memoria_rom, string id_tarjeta_grafica, string id_case, string id_fuente)
+        {
+            CD_Componentes componentes = new CD_Componentes();
+            DataTable tabla = componentes.RetornarPrecioEnsamble(Convert.ToInt32(id_motherboard), Convert.ToInt32(id_procesador), Convert.ToInt32(id_memoria_ram), Convert.ToInt32(id_memoria_rom), Convert.ToInt32(id_tarjeta_grafica), Convert.ToInt32(id_case), Convert.ToInt32(id_fuente));
+            return tabla;
+        }
 
-
+        public DataTable RetornarDatosComponentes(string id_componente)
+        {
+            CD_Componentes componentes = new CD_Componentes();
+            DataTable tabla = componentes.RetornarDatosComponentes(Convert.ToInt32(id_componente));
+            return tabla;
+        }
     }
 }

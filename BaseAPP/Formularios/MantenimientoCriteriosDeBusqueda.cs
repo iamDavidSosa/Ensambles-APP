@@ -143,7 +143,6 @@ namespace BaseAPP.Formularios
             txtHasta.Text = "";
             cbCaracteristica1.SelectedIndex = 0;
             cbTipo1.SelectedIndex = 0;
-            cbTipoUso.SelectedIndex = 0;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
