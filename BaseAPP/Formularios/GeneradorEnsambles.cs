@@ -288,9 +288,33 @@ namespace BaseAPP.Formularios
                     return false;   
                 }
             }
+            else if(txtMinimo.Text != "")
+            {
+                double minimo = Convert.ToDouble(txtMinimo.Text);
+                if (precio >= minimo)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;   
+                }
+            }
+            else if(txtMaximo.Text != "")
+            {
+                double maximo = Convert.ToDouble(txtMaximo.Text);
+                if (precio <= maximo)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;   
+                }
+            }
             else
             {
-                return true;                
+                return false;                
             }   
         }
 

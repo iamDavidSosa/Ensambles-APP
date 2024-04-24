@@ -260,7 +260,7 @@
             gbComponentes.Size = new Size(538, 328);
             gbComponentes.TabIndex = 2;
             gbComponentes.TabStop = false;
-            gbComponentes.Text = "Componentes especificos";
+            gbComponentes.Text = "Componentes adicionales";
             // 
             // checkBox8
             // 

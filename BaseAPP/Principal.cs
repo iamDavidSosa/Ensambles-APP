@@ -55,5 +55,13 @@ namespace BaseAPP
             lblTitulo.Text = "Mantenimiento Componentes";
             pbTitulo.Image = Properties.Resources.gcard;
         }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            ChangeForm(new Dashboard());
+            lblTitulo.Text = "Dashboard";
+            pbTitulo.Image = Properties.Resources.dashboardT;
+
+        }
     }
 }

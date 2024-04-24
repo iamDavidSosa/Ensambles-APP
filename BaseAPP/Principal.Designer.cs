@@ -41,7 +41,7 @@
             btnReglas = new Button();
             btnEnsambles = new Button();
             button2 = new Button();
-            button1 = new Button();
+            btnDashboard = new Button();
             panel3 = new Panel();
             panel4 = new Panel();
             label5 = new Label();
@@ -127,7 +127,7 @@
             panel2.Controls.Add(btnReglas);
             panel2.Controls.Add(btnEnsambles);
             panel2.Controls.Add(button2);
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(btnDashboard);
             panel2.Controls.Add(panel3);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 47);
@@ -244,24 +244,25 @@
             button2.TextImageRelation = TextImageRelation.TextBeforeImage;
             button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnDashboard
             // 
-            button1.Dock = DockStyle.Top;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.LightGray;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleRight;
-            button1.Location = new Point(0, 117);
-            button1.Name = "button1";
-            button1.Padding = new Padding(8, 0, 25, 0);
-            button1.Size = new Size(237, 60);
-            button1.TabIndex = 1;
-            button1.Text = "Dashboard";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button1.UseVisualStyleBackColor = true;
+            btnDashboard.Dock = DockStyle.Top;
+            btnDashboard.FlatAppearance.BorderSize = 0;
+            btnDashboard.FlatStyle = FlatStyle.Flat;
+            btnDashboard.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDashboard.ForeColor = Color.LightGray;
+            btnDashboard.Image = (Image)resources.GetObject("btnDashboard.Image");
+            btnDashboard.ImageAlign = ContentAlignment.MiddleRight;
+            btnDashboard.Location = new Point(0, 117);
+            btnDashboard.Name = "btnDashboard";
+            btnDashboard.Padding = new Padding(8, 0, 25, 0);
+            btnDashboard.Size = new Size(237, 60);
+            btnDashboard.TabIndex = 1;
+            btnDashboard.Text = "Dashboard";
+            btnDashboard.TextAlign = ContentAlignment.MiddleLeft;
+            btnDashboard.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnDashboard.UseVisualStyleBackColor = true;
+            btnDashboard.Click += btnDashboard_Click;
             // 
             // panel3
             // 
@@ -410,7 +411,7 @@
         private PictureBox pictureBox3;
         private Label label4;
         private Label label3;
-        private Button button1;
+        private Button btnDashboard;
         private Label label5;
         private Button button6;
         private Button btnComponentes;
