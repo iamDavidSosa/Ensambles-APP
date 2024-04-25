@@ -272,6 +272,7 @@
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(185, 29);
             txtPrecio.TabIndex = 19;
+            txtPrecio.KeyPress += txtPrecio_KeyPress;
             // 
             // txtCantidad
             // 
@@ -284,6 +285,7 @@
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(172, 29);
             txtCantidad.TabIndex = 18;
+            txtCantidad.KeyPress += txtCantidad_KeyPress;
             // 
             // label6
             // 

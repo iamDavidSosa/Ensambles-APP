@@ -87,5 +87,42 @@ namespace CapaNegocio
             DataTable tabla = componentes.RetornarDatosComponentes(Convert.ToInt32(id_componente));
             return tabla;
         }
+
+        public DataTable RetornarComponentesAdicionales()
+        {
+            CD_Componentes componentes = new CD_Componentes();
+            DataTable tabla = componentes.RetornarComponentesAdicionales();
+            return tabla;
+        }
+
+        public DataTable MostrarComponentesAdicionales()
+        {
+            CD_Componentes componentes = new CD_Componentes();
+            return componentes.MostrarComponentesAdicionales();
+        }
+
+        public void AgregarComponenteAdicional(string id_componente_adicional)
+        {
+            CD_Componentes componentes = new CD_Componentes();
+            componentes.AgregarComponenteAdicional(Convert.ToInt32(id_componente_adicional));
+        }
+
+        public void EliminarComponenteAdicional(string id_componente)
+        {
+            CD_Componentes componentes = new CD_Componentes();
+            componentes.EliminarComponenteAdicional(Convert.ToInt32(id_componente));
+        }
+
+        public void LimpiarComponentesElegidos()
+        {
+            CD_Componentes componentes = new CD_Componentes();
+            componentes.LimpiarComponentesElegidos();
+        }
+
+        public DataTable RetornarPrecioAdicional()
+        {
+            CD_Componentes componentes = new CD_Componentes();
+            return componentes.RetornarPrecioAdicional();
+        }
     }
 }

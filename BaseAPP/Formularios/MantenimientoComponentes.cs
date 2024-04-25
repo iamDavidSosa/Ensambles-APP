@@ -130,23 +130,31 @@ namespace BaseAPP.Formularios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
+            if (txtModelo.Text == "" || txtDescripcion.Text == "" || txtPrecio.Text == "" || txtCantidad.Text == "")
             {
-                if (Id_componente == null)
-                {
-                    componentes.Insertar("0", cbTipoComponente.SelectedValue.ToString(), cbMarca.SelectedValue.ToString(), txtModelo.Text, txtDescripcion.Text, Convert.ToSingle(txtPrecio.Text), txtCantidad.Text, "1");
-                }
-                else
-                {
-                    componentes.Insertar(Id_componente, cbTipoComponente.SelectedValue.ToString(), cbMarca.SelectedValue.ToString(), txtModelo.Text, txtDescripcion.Text, Convert.ToSingle(txtPrecio.Text), txtCantidad.Text, "1");
-                }
-                Limpiar();
-                MostrarComponentes();
+                MessageBox.Show("Llene todos los campos");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error al guardar el componente: " + ex.Message);
+                try
+                {
+                    if (Id_componente == null)
+                    {
+                        componentes.Insertar("0", cbTipoComponente.SelectedValue.ToString(), cbMarca.SelectedValue.ToString(), txtModelo.Text, txtDescripcion.Text, Convert.ToSingle(txtPrecio.Text), txtCantidad.Text, "1");
+                    }
+                    else
+                    {
+                        componentes.Insertar(Id_componente, cbTipoComponente.SelectedValue.ToString(), cbMarca.SelectedValue.ToString(), txtModelo.Text, txtDescripcion.Text, Convert.ToSingle(txtPrecio.Text), txtCantidad.Text, "1");
+                    }
+                    Limpiar();
+                    MostrarComponentes();
+                }
+                catch (Exception ex)
+                {
+                    
+                }
             }
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -169,7 +177,6 @@ namespace BaseAPP.Formularios
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al eliminar el componente: " + ex.Message);
             }
         }
 
@@ -192,6 +199,32 @@ namespace BaseAPP.Formularios
             Formularios.MantenimientoTiposComponentes tipos = new();
             tipos.ShowDialog();
             LlenarTipos();
+        }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 

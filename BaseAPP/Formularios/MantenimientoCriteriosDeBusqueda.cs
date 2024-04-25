@@ -167,9 +167,42 @@ namespace BaseAPP.Formularios
                 {
                     MessageBox.Show("Error al seleccionar el criterio de búsqueda: " + ex.Message);
                 }
-                
+
             }
 
+        }
+
+        private void pbTiposEnsambles_Click(object sender, EventArgs e)
+        {
+            MantenimientoTipoEnsamble mantenimientoTipoEnsamble = new();
+            mantenimientoTipoEnsamble.ShowDialog();
+            LlenarTiposEnsambles();
+        }
+
+        private void txtDesde_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtHasta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

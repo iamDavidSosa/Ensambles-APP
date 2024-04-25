@@ -14,8 +14,9 @@ namespace BaseAPP.Formularios
 {
     public partial class GeneradorEnsambles : Form
     {
-        //private int[,] componentes_elegidos = new int[7, 2];
 
+        static bool BotonPresionado = false;
+        int Conteo = 0;
         private class Componente
         {
             public int IdComponente { get; set; }
@@ -40,21 +41,58 @@ namespace BaseAPP.Formularios
             InitializeComponent();
         }
 
+        public void LlenarComponentesAdicionales()
+        {
+            try
+            {
+                CN_Componentes componentes = new();
+                DataTable tabla = componentes.RetornarComponentesAdicionales();
+                if (tabla.Rows.Count > 0)
+                {
+                    DataRow row = tabla.Rows[0];
+                    cbComponentes.DataSource = tabla;
+                    cbComponentes.DisplayMember = "Componente";
+                    cbComponentes.ValueMember = "Id";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los componentes: " + ex.Message);
+            }
+        }
+
         private void cbEspecificar_CheckedChanged(object sender, EventArgs e)
         {
             if (cbEspecificar.Checked)
             {
                 gbComponentes.Enabled = true;
+                MostrarComponentesAdicionales();
             }
             else
             {
                 gbComponentes.Enabled = false;
+                dgvComponentes.DataSource = null;
             }
         }
 
         private void GeneradorEnsambles_Load(object sender, EventArgs e)
         {
             LlenarTiposEnsambles();
+            LlenarComponentesAdicionales();
+            LimpiarComponentesElegidos();
+        }
+
+        public void LimpiarComponentesElegidos()
+        {
+            try
+            {
+                CN_Componentes componentes = new();
+                componentes.LimpiarComponentesElegidos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al limpiar los componentes elegidos: " + ex.Message);
+            }
         }
 
         private void LlenarTiposEnsambles()
@@ -111,8 +149,10 @@ namespace BaseAPP.Formularios
         {
             double precio_total = 0;
             bool visible = false;
-            CN_Componentes obj_busqueda= new();
+            CN_Componentes obj_busqueda = new();
             DataTable tabla = new();
+            CN_Ensambles ensamble = new();
+            ensamble.LimpiarTablaTemporal();
             try
             {
                 LlenarListaMotherBoard();
@@ -159,7 +199,7 @@ namespace BaseAPP.Formularios
                                             {
                                                 foreach (Componente tarjetaGrafica in listaTarjetaGrafica)
                                                 {
-                                                    if(listaCase.Count == 0)
+                                                    if (listaCase.Count == 0)
                                                     {
                                                         MessageBox.Show("No hay cases compatibles con la motherboard: " + componente.IdComponente);
                                                     }
@@ -175,13 +215,13 @@ namespace BaseAPP.Formularios
                                                             {
                                                                 foreach (Componente fuentePoder in listaFuentePoder)
                                                                 {
-                                                                   
-                                                                    tabla = obj_busqueda.RetornarPrecioEnsamble(componente.IdComponente.ToString(), procesador.IdComponente.ToString(), memoriaRAM.IdComponente.ToString(), rom.IdComponente.ToString(), tarjetaGrafica.IdComponente.ToString(), case_.IdComponente.ToString(), fuentePoder.IdComponente.ToString());  
+
+                                                                    tabla = obj_busqueda.RetornarPrecioEnsamble(componente.IdComponente.ToString(), procesador.IdComponente.ToString(), memoriaRAM.IdComponente.ToString(), rom.IdComponente.ToString(), tarjetaGrafica.IdComponente.ToString(), case_.IdComponente.ToString(), fuentePoder.IdComponente.ToString());
                                                                     precio_total = Convert.ToDouble(tabla.Rows[0]["precio_total"]);
 
                                                                     if (FiltrarPorPrecio(precio_total))
                                                                     {
-                                                                        if(visible == false)
+                                                                        if (visible == false)
                                                                         {
                                                                             panel1.Visible = true;
                                                                             panel2.Visible = true;
@@ -191,8 +231,11 @@ namespace BaseAPP.Formularios
                                                                             panel6.Visible = true;
                                                                             panel7.Visible = true;
                                                                             lblPrecio.Visible = true;
-                                                                            lblPrecioT.Visible = true; 
+                                                                            lblPrecioT.Visible = true;
+                                                                            lblAdicional.Visible = true;
+                                                                            lblAdicionalT.Visible = true;
                                                                             visible = true;
+
                                                                         }
                                                                         contador++;
                                                                         MostrarEnsamble(componente.IdComponente.ToString(), ID1, DESC1, PRE1);
@@ -202,9 +245,10 @@ namespace BaseAPP.Formularios
                                                                         MostrarEnsamble(tarjetaGrafica.IdComponente.ToString(), ID5, DESC5, PRE5);
                                                                         MostrarEnsamble(case_.IdComponente.ToString(), ID6, DESC6, PRE6);
                                                                         MostrarEnsamble(fuentePoder.IdComponente.ToString(), ID7, DESC7, PRE7);
-                                                                        Count.Text = contador.ToString();
-                                                                        lblPrecio.Text=precio_total.ToString();
-                                                                        MessageBox.Show("Ver siguiente ensamble");
+                                                                        //Count.Text = contador.ToString();
+                                                                        lblPrecio.Text = precio_total.ToString() + ".00 RD$";
+
+                                                                        InsertarEnsamble(componente.IdComponente.ToString(), procesador.IdComponente.ToString(), memoriaRAM.IdComponente.ToString(), rom.IdComponente.ToString(), tarjetaGrafica.IdComponente.ToString(), case_.IdComponente.ToString(), fuentePoder.IdComponente.ToString(), precio_total.ToString());
                                                                     }
                                                                 }
                                                             }
@@ -219,10 +263,17 @@ namespace BaseAPP.Formularios
                         }
                     }
                 }
+                ContarEnsambles();
+                if (Conteo > 0)
+                {
+                    btnVer.Enabled = true;
+                }
+                lblAdicional.Text = RetornarPrecioAdicional().ToString() + ".00 RD$";
+                MessageBox.Show("Se ha(n) generado(s) " + Count.Text + " ensamble(s)");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar los componentes: " + ex.Message);
+                MessageBox.Show("No se encontraron ensambles disponibles");
             }
 
         }
@@ -251,6 +302,60 @@ namespace BaseAPP.Formularios
             }
         }
 
+        public void ContarEnsambles()
+        {
+            try
+            {
+                CN_Ensambles ensamble = new();
+                DataTable tabla = ensamble.ContarEnsambles();
+                if (tabla.Rows.Count > 0)
+                {
+                    DataRow row = tabla.Rows[0];
+                    Conteo = Convert.ToInt32(row["conteo"]);
+                    Count.Text = Conteo.ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al contar los ensambles: " + ex.Message);
+            }
+
+        }
+
+        public int RetornarPrecioAdicional()
+        {
+            int precio = 0;
+            try
+            {
+                CN_Componentes componentes = new();
+                DataTable tabla = componentes.RetornarPrecioAdicional();
+                if (tabla.Rows.Count > 0)
+                {
+                    DataRow row = tabla.Rows[0];
+                    precio = Convert.ToInt32(row["total"]);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return precio;
+        }
+
+        private void InsertarEnsamble(string id_motherboard, string id_procesador, string id_memoria_ram, string id_memoria_rom, string id_grafica, string id_case, string id_power_supply, string precio)
+        {
+            try
+            {
+                CN_Ensambles ensamble = new();
+                ensamble.Insertar(id_motherboard, id_procesador, id_memoria_ram, id_memoria_rom, id_grafica, id_case, id_power_supply, precio);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al insertar el ensamble: " + ex.Message);
+            }
+        }
+
         private void MostrarEnsamble(string id_componente, Label lbl, Label lbl2, Label lbl3)
         {
             try
@@ -262,7 +367,7 @@ namespace BaseAPP.Formularios
                     DataRow row = tabla.Rows[0];
                     lbl.Text = row["ID"].ToString();
                     lbl2.Text = row["Componente"].ToString();
-                    lbl3.Text = row["Precio"].ToString();
+                    lbl3.Text = row["Precio"].ToString() + ".00 RD$";
                 }
 
 
@@ -275,7 +380,7 @@ namespace BaseAPP.Formularios
 
         private bool FiltrarPorPrecio(double precio)
         {
-            if(txtMinimo.Text != "" && txtMaximo.Text != "")
+            if (txtMinimo.Text != "" && txtMaximo.Text != "")
             {
                 double minimo = Convert.ToDouble(txtMinimo.Text);
                 double maximo = Convert.ToDouble(txtMaximo.Text);
@@ -285,10 +390,10 @@ namespace BaseAPP.Formularios
                 }
                 else
                 {
-                    return false;   
+                    return false;
                 }
             }
-            else if(txtMinimo.Text != "")
+            else if (txtMinimo.Text != "")
             {
                 double minimo = Convert.ToDouble(txtMinimo.Text);
                 if (precio >= minimo)
@@ -297,10 +402,10 @@ namespace BaseAPP.Formularios
                 }
                 else
                 {
-                    return false;   
+                    return false;
                 }
             }
-            else if(txtMaximo.Text != "")
+            else if (txtMaximo.Text != "")
             {
                 double maximo = Convert.ToDouble(txtMaximo.Text);
                 if (precio <= maximo)
@@ -309,13 +414,13 @@ namespace BaseAPP.Formularios
                 }
                 else
                 {
-                    return false;   
+                    return false;
                 }
             }
             else
             {
-                return false;                
-            }   
+                return true;
+            }
         }
 
         private void LlenarListaProcesadores(string id_componente, string id_componente_siguiente, string id_tipo_ensamble)
@@ -471,8 +576,102 @@ namespace BaseAPP.Formularios
         {
             MantenimientoCriteriosDeBusqueda mantenimientoTiposDeEnsambles = new();
             mantenimientoTiposDeEnsambles.ShowDialog();
+            LlenarTiposEnsambles();
 
 
+        }
+
+        private void btnVerSiguiente_Click(object sender, EventArgs e)
+        {
+            BotonPresionado = true;
+            VistaEnsamblesGenerados vistaEnsamblesGenerados = new VistaEnsamblesGenerados();
+            vistaEnsamblesGenerados.ShowDialog();
+
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AgregarComponenteAdicional();
+            MostrarComponentesAdicionales();
+        }
+
+        private void MostrarComponentesAdicionales()
+        {
+            try
+            {
+                CN_Componentes componentes = new();
+                DataTable tabla = componentes.MostrarComponentesAdicionales();
+                dgvComponentes.DataSource = tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al mostrar los componentes adicionales: " + ex.Message);
+            }
+        }
+
+        public void AgregarComponenteAdicional()
+        {
+            try
+            {
+                CN_Componentes componentes = new();
+                componentes.AgregarComponenteAdicional(cbComponentes.SelectedValue.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al insertar el ensamble: " + ex.Message);
+            }
+        }
+
+        private void dgvComponentes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvComponentes.Rows.Count > 0)
+            {
+                string id_componente_adicional = dgvComponentes.CurrentRow.Cells[0].Value.ToString();
+                if (MessageBox.Show("¿Estás seguro que deseas eliminar el componente adicional?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    EliminarComponenteAdicional(id_componente_adicional);
+                    MostrarComponentesAdicionales();
+                }
+            }
+        }
+
+        public void EliminarComponenteAdicional(string id_componente)
+        {
+            try
+            {
+                CN_Componentes componentes = new();
+                componentes.EliminarComponenteAdicional(id_componente);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el componente adicional: " + ex.Message);
+            }
+        }
+
+        private void txtMinimo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtMaximo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

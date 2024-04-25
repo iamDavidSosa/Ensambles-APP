@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeneradorEnsambles));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             pbTiposEnsambles = new PictureBox();
             label2 = new Label();
@@ -40,75 +42,75 @@
             label3 = new Label();
             label1 = new Label();
             gbComponentes = new GroupBox();
-            checkBox8 = new CheckBox();
-            comboBox7 = new ComboBox();
-            label11 = new Label();
-            checkBox7 = new CheckBox();
-            checkBox6 = new CheckBox();
-            checkBox5 = new CheckBox();
-            checkBox4 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox2 = new CheckBox();
-            comboBox4 = new ComboBox();
-            label8 = new Label();
-            comboBox5 = new ComboBox();
-            label9 = new Label();
-            comboBox6 = new ComboBox();
-            label10 = new Label();
-            comboBox3 = new ComboBox();
-            label7 = new Label();
-            comboBox2 = new ComboBox();
-            label6 = new Label();
-            comboBox1 = new ComboBox();
+            dgvComponentes = new DataGridView();
+            btnAgregar = new Button();
+            cbComponentes = new ComboBox();
             label5 = new Label();
             cbEspecificar = new CheckBox();
             btnEnsamble = new Button();
             groupBox4 = new GroupBox();
+            lblAdicional = new Label();
+            lblAdicionalT = new Label();
             lblPrecio = new Label();
             lblPrecioT = new Label();
             Count = new Label();
             panel7 = new Panel();
+            pictureBox6 = new PictureBox();
             PRE7 = new Label();
             DESC7 = new Label();
             ID7 = new Label();
             panel6 = new Panel();
+            pictureBox7 = new PictureBox();
             PRE6 = new Label();
             DESC6 = new Label();
             ID6 = new Label();
             panel5 = new Panel();
+            pictureBox5 = new PictureBox();
             PRE5 = new Label();
             DESC5 = new Label();
             ID5 = new Label();
             panel4 = new Panel();
+            pictureBox4 = new PictureBox();
             PRE4 = new Label();
             DESC4 = new Label();
             ID4 = new Label();
             panel2 = new Panel();
+            pictureBox2 = new PictureBox();
             PRE2 = new Label();
             DESC2 = new Label();
             ID2 = new Label();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             PRE1 = new Label();
             DESC1 = new Label();
             ID1 = new Label();
             panel3 = new Panel();
+            pictureBox3 = new PictureBox();
             PRE3 = new Label();
             DESC3 = new Label();
             ID3 = new Label();
             label12 = new Label();
-            button1 = new Button();
+            btnVer = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbTiposEnsambles).BeginInit();
             groupBox2.SuspendLayout();
             gbComponentes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvComponentes).BeginInit();
             groupBox4.SuspendLayout();
             panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -195,6 +197,7 @@
             txtMaximo.Name = "txtMaximo";
             txtMaximo.Size = new Size(211, 29);
             txtMaximo.TabIndex = 31;
+            txtMaximo.KeyPress += txtMaximo_KeyPress;
             // 
             // txtMinimo
             // 
@@ -207,6 +210,7 @@
             txtMinimo.Name = "txtMinimo";
             txtMinimo.Size = new Size(211, 29);
             txtMinimo.TabIndex = 30;
+            txtMinimo.KeyPress += txtMinimo_KeyPress;
             // 
             // label3
             // 
@@ -232,26 +236,9 @@
             // 
             // gbComponentes
             // 
-            gbComponentes.Controls.Add(checkBox8);
-            gbComponentes.Controls.Add(comboBox7);
-            gbComponentes.Controls.Add(label11);
-            gbComponentes.Controls.Add(checkBox7);
-            gbComponentes.Controls.Add(checkBox6);
-            gbComponentes.Controls.Add(checkBox5);
-            gbComponentes.Controls.Add(checkBox4);
-            gbComponentes.Controls.Add(checkBox3);
-            gbComponentes.Controls.Add(checkBox2);
-            gbComponentes.Controls.Add(comboBox4);
-            gbComponentes.Controls.Add(label8);
-            gbComponentes.Controls.Add(comboBox5);
-            gbComponentes.Controls.Add(label9);
-            gbComponentes.Controls.Add(comboBox6);
-            gbComponentes.Controls.Add(label10);
-            gbComponentes.Controls.Add(comboBox3);
-            gbComponentes.Controls.Add(label7);
-            gbComponentes.Controls.Add(comboBox2);
-            gbComponentes.Controls.Add(label6);
-            gbComponentes.Controls.Add(comboBox1);
+            gbComponentes.Controls.Add(dgvComponentes);
+            gbComponentes.Controls.Add(btnAgregar);
+            gbComponentes.Controls.Add(cbComponentes);
             gbComponentes.Controls.Add(label5);
             gbComponentes.Enabled = false;
             gbComponentes.ForeColor = SystemColors.ControlLight;
@@ -262,225 +249,77 @@
             gbComponentes.TabStop = false;
             gbComponentes.Text = "Componentes adicionales";
             // 
-            // checkBox8
+            // dgvComponentes
             // 
-            checkBox8.AutoSize = true;
-            checkBox8.ForeColor = SystemColors.ButtonFace;
-            checkBox8.Location = new Point(244, 282);
-            checkBox8.Name = "checkBox8";
-            checkBox8.Size = new Size(18, 17);
-            checkBox8.TabIndex = 47;
-            checkBox8.UseVisualStyleBackColor = true;
+            dgvComponentes.AllowUserToAddRows = false;
+            dgvComponentes.AllowUserToDeleteRows = false;
+            dgvComponentes.AllowUserToResizeColumns = false;
+            dgvComponentes.AllowUserToResizeRows = false;
+            dgvComponentes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvComponentes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvComponentes.BackgroundColor = Color.FromArgb(11, 33, 50);
+            dgvComponentes.BorderStyle = BorderStyle.None;
+            dgvComponentes.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvComponentes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(7, 111, 178);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvComponentes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvComponentes.ColumnHeadersHeight = 30;
+            dgvComponentes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvComponentes.EnableHeadersVisualStyles = false;
+            dgvComponentes.GridColor = SystemColors.MenuBar;
+            dgvComponentes.Location = new Point(16, 120);
+            dgvComponentes.MultiSelect = false;
+            dgvComponentes.Name = "dgvComponentes";
+            dgvComponentes.ReadOnly = true;
+            dgvComponentes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvComponentes.RowHeadersVisible = false;
+            dgvComponentes.RowHeadersWidth = 51;
+            dgvComponentes.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(13, 50, 76);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(14, 95, 147);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dgvComponentes.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dgvComponentes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvComponentes.Size = new Size(507, 178);
+            dgvComponentes.TabIndex = 34;
+            dgvComponentes.CellDoubleClick += dgvComponentes_CellDoubleClick;
             // 
-            // comboBox7
+            // btnAgregar
             // 
-            comboBox7.BackColor = Color.FromArgb(13, 50, 76);
-            comboBox7.FlatStyle = FlatStyle.Popup;
-            comboBox7.Font = new Font("Segoe UI", 10.8F);
-            comboBox7.ForeColor = Color.WhiteSmoke;
-            comboBox7.FormattingEnabled = true;
-            comboBox7.Location = new Point(22, 272);
-            comboBox7.Name = "comboBox7";
-            comboBox7.Size = new Size(211, 33);
-            comboBox7.TabIndex = 45;
+            btnAgregar.BackColor = Color.FromArgb(7, 111, 178);
+            btnAgregar.FlatStyle = FlatStyle.Popup;
+            btnAgregar.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic);
+            btnAgregar.ForeColor = SystemColors.ControlLight;
+            btnAgregar.Image = Properties.Resources.add4;
+            btnAgregar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAgregar.Location = new Point(327, 64);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Padding = new Padding(20, 0, 0, 0);
+            btnAgregar.Size = new Size(180, 36);
+            btnAgregar.TabIndex = 33;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
-            // label11
+            // cbComponentes
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.ForeColor = Color.LightGray;
-            label11.Location = new Point(18, 243);
-            label11.Name = "label11";
-            label11.Size = new Size(116, 23);
-            label11.TabIndex = 46;
-            label11.Text = "Power supply:";
-            // 
-            // checkBox7
-            // 
-            checkBox7.AutoSize = true;
-            checkBox7.ForeColor = SystemColors.ButtonFace;
-            checkBox7.Location = new Point(503, 213);
-            checkBox7.Name = "checkBox7";
-            checkBox7.Size = new Size(18, 17);
-            checkBox7.TabIndex = 44;
-            checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            checkBox6.AutoSize = true;
-            checkBox6.ForeColor = SystemColors.ButtonFace;
-            checkBox6.Location = new Point(503, 141);
-            checkBox6.Name = "checkBox6";
-            checkBox6.Size = new Size(18, 17);
-            checkBox6.TabIndex = 43;
-            checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            checkBox5.AutoSize = true;
-            checkBox5.ForeColor = SystemColors.ButtonFace;
-            checkBox5.Location = new Point(503, 70);
-            checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(18, 17);
-            checkBox5.TabIndex = 42;
-            checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            checkBox4.AutoSize = true;
-            checkBox4.ForeColor = SystemColors.ButtonFace;
-            checkBox4.Location = new Point(244, 213);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(18, 17);
-            checkBox4.TabIndex = 41;
-            checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            checkBox3.AutoSize = true;
-            checkBox3.ForeColor = SystemColors.ButtonFace;
-            checkBox3.Location = new Point(244, 141);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(18, 17);
-            checkBox3.TabIndex = 40;
-            checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.ForeColor = SystemColors.ButtonFace;
-            checkBox2.Location = new Point(244, 70);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(18, 17);
-            checkBox2.TabIndex = 5;
-            checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // comboBox4
-            // 
-            comboBox4.BackColor = Color.FromArgb(13, 50, 76);
-            comboBox4.FlatStyle = FlatStyle.Popup;
-            comboBox4.Font = new Font("Segoe UI", 10.8F);
-            comboBox4.ForeColor = Color.WhiteSmoke;
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(281, 203);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(211, 33);
-            comboBox4.TabIndex = 38;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.LightGray;
-            label8.Location = new Point(277, 174);
-            label8.Name = "label8";
-            label8.Size = new Size(50, 23);
-            label8.TabIndex = 39;
-            label8.Text = "Case:";
-            // 
-            // comboBox5
-            // 
-            comboBox5.BackColor = Color.FromArgb(13, 50, 76);
-            comboBox5.FlatStyle = FlatStyle.Popup;
-            comboBox5.Font = new Font("Segoe UI", 10.8F);
-            comboBox5.ForeColor = Color.WhiteSmoke;
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(281, 131);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(211, 33);
-            comboBox5.TabIndex = 36;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.LightGray;
-            label9.Location = new Point(277, 102);
-            label9.Name = "label9";
-            label9.Size = new Size(121, 23);
-            label9.TabIndex = 37;
-            label9.Text = "Tarjeta gráfica:";
-            // 
-            // comboBox6
-            // 
-            comboBox6.BackColor = Color.FromArgb(13, 50, 76);
-            comboBox6.FlatStyle = FlatStyle.Popup;
-            comboBox6.Font = new Font("Segoe UI", 10.8F);
-            comboBox6.ForeColor = Color.WhiteSmoke;
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Location = new Point(280, 60);
-            comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(211, 33);
-            comboBox6.TabIndex = 34;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.ForeColor = Color.LightGray;
-            label10.Location = new Point(276, 31);
-            label10.Name = "label10";
-            label10.Size = new Size(225, 23);
-            label10.TabIndex = 35;
-            label10.Text = "Unidad de almacenamiento:";
-            // 
-            // comboBox3
-            // 
-            comboBox3.BackColor = Color.FromArgb(13, 50, 76);
-            comboBox3.FlatStyle = FlatStyle.Popup;
-            comboBox3.Font = new Font("Segoe UI", 10.8F);
-            comboBox3.ForeColor = Color.WhiteSmoke;
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(22, 203);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(211, 33);
-            comboBox3.TabIndex = 32;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.LightGray;
-            label7.Location = new Point(18, 174);
-            label7.Name = "label7";
-            label7.Size = new Size(126, 23);
-            label7.TabIndex = 33;
-            label7.Text = "Memoria RAM:";
-            // 
-            // comboBox2
-            // 
-            comboBox2.BackColor = Color.FromArgb(13, 50, 76);
-            comboBox2.FlatStyle = FlatStyle.Popup;
-            comboBox2.Font = new Font("Segoe UI", 10.8F);
-            comboBox2.ForeColor = Color.WhiteSmoke;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(22, 131);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(211, 33);
-            comboBox2.TabIndex = 30;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.LightGray;
-            label6.Location = new Point(18, 102);
-            label6.Name = "label6";
-            label6.Size = new Size(100, 23);
-            label6.TabIndex = 31;
-            label6.Text = "Procesador:";
-            // 
-            // comboBox1
-            // 
-            comboBox1.BackColor = Color.FromArgb(13, 50, 76);
-            comboBox1.FlatStyle = FlatStyle.Popup;
-            comboBox1.Font = new Font("Segoe UI", 10.8F);
-            comboBox1.ForeColor = Color.WhiteSmoke;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(21, 60);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(211, 33);
-            comboBox1.TabIndex = 29;
+            cbComponentes.BackColor = Color.FromArgb(13, 50, 76);
+            cbComponentes.FlatStyle = FlatStyle.Popup;
+            cbComponentes.Font = new Font("Segoe UI", 10.8F);
+            cbComponentes.ForeColor = Color.WhiteSmoke;
+            cbComponentes.FormattingEnabled = true;
+            cbComponentes.Location = new Point(21, 66);
+            cbComponentes.Name = "cbComponentes";
+            cbComponentes.Size = new Size(282, 33);
+            cbComponentes.TabIndex = 29;
             // 
             // label5
             // 
@@ -489,9 +328,9 @@
             label5.ForeColor = Color.LightGray;
             label5.Location = new Point(17, 31);
             label5.Name = "label5";
-            label5.Size = new Size(116, 23);
+            label5.Size = new Size(114, 23);
             label5.TabIndex = 29;
-            label5.Text = "Motherboard:";
+            label5.Text = "Componente:";
             // 
             // cbEspecificar
             // 
@@ -499,9 +338,9 @@
             cbEspecificar.ForeColor = SystemColors.ButtonFace;
             cbEspecificar.Location = new Point(17, 274);
             cbEspecificar.Name = "cbEspecificar";
-            cbEspecificar.Size = new Size(196, 24);
+            cbEspecificar.Size = new Size(258, 24);
             cbEspecificar.TabIndex = 3;
-            cbEspecificar.Text = "Especificar componentes";
+            cbEspecificar.Text = "Agregar componentes adicionales";
             cbEspecificar.UseVisualStyleBackColor = true;
             cbEspecificar.CheckedChanged += cbEspecificar_CheckedChanged;
             // 
@@ -518,12 +357,14 @@
             btnEnsamble.Padding = new Padding(20, 0, 0, 0);
             btnEnsamble.Size = new Size(268, 39);
             btnEnsamble.TabIndex = 4;
-            btnEnsamble.Text = "Generar Ensamble";
+            btnEnsamble.Text = "Generar Ensambles";
             btnEnsamble.UseVisualStyleBackColor = false;
             btnEnsamble.Click += btnEnsamble_Click;
             // 
             // groupBox4
             // 
+            groupBox4.Controls.Add(lblAdicional);
+            groupBox4.Controls.Add(lblAdicionalT);
             groupBox4.Controls.Add(lblPrecio);
             groupBox4.Controls.Add(lblPrecioT);
             groupBox4.Controls.Add(Count);
@@ -541,14 +382,38 @@
             groupBox4.Size = new Size(580, 623);
             groupBox4.TabIndex = 29;
             groupBox4.TabStop = false;
-            groupBox4.Text = "Ensamble";
+            groupBox4.Text = "Ensambles";
+            // 
+            // lblAdicional
+            // 
+            lblAdicional.AutoSize = true;
+            lblAdicional.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblAdicional.ForeColor = Color.LightGray;
+            lblAdicional.Location = new Point(322, 565);
+            lblAdicional.Name = "lblAdicional";
+            lblAdicional.Size = new Size(67, 28);
+            lblAdicional.TabIndex = 40;
+            lblAdicional.Text = "65000";
+            lblAdicional.Visible = false;
+            // 
+            // lblAdicionalT
+            // 
+            lblAdicionalT.AutoSize = true;
+            lblAdicionalT.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAdicionalT.ForeColor = Color.LightGray;
+            lblAdicionalT.Location = new Point(322, 533);
+            lblAdicionalT.Name = "lblAdicionalT";
+            lblAdicionalT.Size = new Size(168, 28);
+            lblAdicionalT.TabIndex = 41;
+            lblAdicionalT.Text = "Precio adicional:";
+            lblAdicionalT.Visible = false;
             // 
             // lblPrecio
             // 
             lblPrecio.AutoSize = true;
             lblPrecio.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblPrecio.ForeColor = Color.LightGray;
-            lblPrecio.Location = new Point(322, 530);
+            lblPrecio.Location = new Point(322, 503);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(67, 28);
             lblPrecio.TabIndex = 34;
@@ -560,7 +425,7 @@
             lblPrecioT.AutoSize = true;
             lblPrecioT.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPrecioT.ForeColor = Color.LightGray;
-            lblPrecioT.Location = new Point(322, 497);
+            lblPrecioT.Location = new Point(322, 474);
             lblPrecioT.Name = "lblPrecioT";
             lblPrecioT.Size = new Size(127, 28);
             lblPrecioT.TabIndex = 39;
@@ -581,6 +446,7 @@
             // panel7
             // 
             panel7.BackColor = Color.FromArgb(13, 50, 76);
+            panel7.Controls.Add(pictureBox6);
             panel7.Controls.Add(PRE7);
             panel7.Controls.Add(DESC7);
             panel7.Controls.Add(ID7);
@@ -589,6 +455,16 @@
             panel7.Size = new Size(275, 128);
             panel7.TabIndex = 38;
             panel7.Visible = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = Properties.Resources.power;
+            pictureBox6.Location = new Point(209, 1);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(60, 64);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 37;
+            pictureBox6.TabStop = false;
             // 
             // PRE7
             // 
@@ -625,6 +501,7 @@
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(13, 50, 76);
+            panel6.Controls.Add(pictureBox7);
             panel6.Controls.Add(PRE6);
             panel6.Controls.Add(DESC6);
             panel6.Controls.Add(ID6);
@@ -633,6 +510,16 @@
             panel6.Size = new Size(275, 128);
             panel6.TabIndex = 38;
             panel6.Visible = false;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.Image = Properties.Resources._case;
+            pictureBox7.Location = new Point(212, 10);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(54, 49);
+            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox7.TabIndex = 38;
+            pictureBox7.TabStop = false;
             // 
             // PRE6
             // 
@@ -669,6 +556,7 @@
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(13, 50, 76);
+            panel5.Controls.Add(pictureBox5);
             panel5.Controls.Add(PRE5);
             panel5.Controls.Add(DESC5);
             panel5.Controls.Add(ID5);
@@ -677,6 +565,16 @@
             panel5.Size = new Size(275, 128);
             panel5.TabIndex = 37;
             panel5.Visible = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.graphic;
+            pictureBox5.Location = new Point(209, 6);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(55, 53);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 35;
+            pictureBox5.TabStop = false;
             // 
             // PRE5
             // 
@@ -713,6 +611,7 @@
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(13, 50, 76);
+            panel4.Controls.Add(pictureBox4);
             panel4.Controls.Add(PRE4);
             panel4.Controls.Add(DESC4);
             panel4.Controls.Add(ID4);
@@ -721,6 +620,16 @@
             panel4.Size = new Size(275, 128);
             panel4.TabIndex = 36;
             panel4.Visible = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Properties.Resources.ssd;
+            pictureBox4.Location = new Point(202, 3);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(60, 53);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 36;
+            pictureBox4.TabStop = false;
             // 
             // PRE4
             // 
@@ -757,6 +666,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(13, 50, 76);
+            panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(PRE2);
             panel2.Controls.Add(DESC2);
             panel2.Controls.Add(ID2);
@@ -765,6 +675,16 @@
             panel2.Size = new Size(275, 128);
             panel2.TabIndex = 34;
             panel2.Visible = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.procesador;
+            pictureBox2.Location = new Point(209, 10);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(53, 53);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 35;
+            pictureBox2.TabStop = false;
             // 
             // PRE2
             // 
@@ -801,6 +721,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(13, 50, 76);
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(PRE1);
             panel1.Controls.Add(DESC1);
             panel1.Controls.Add(ID1);
@@ -809,6 +730,16 @@
             panel1.Size = new Size(275, 128);
             panel1.TabIndex = 30;
             panel1.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.motherboard;
+            pictureBox1.Location = new Point(200, 10);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(65, 53);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 34;
+            pictureBox1.TabStop = false;
             // 
             // PRE1
             // 
@@ -845,6 +776,7 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(13, 50, 76);
+            panel3.Controls.Add(pictureBox3);
             panel3.Controls.Add(PRE3);
             panel3.Controls.Add(DESC3);
             panel3.Controls.Add(ID3);
@@ -853,6 +785,16 @@
             panel3.Size = new Size(275, 128);
             panel3.TabIndex = 35;
             panel3.Visible = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.ram;
+            pictureBox3.Location = new Point(198, -3);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(72, 65);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 35;
+            pictureBox3.TabStop = false;
             // 
             // PRE3
             // 
@@ -897,21 +839,23 @@
             label12.TabIndex = 29;
             label12.Text = "Ensamble(s) generado(s):";
             // 
-            // button1
+            // btnVer
             // 
-            button1.BackColor = Color.FromArgb(7, 111, 178);
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic);
-            button1.ForeColor = SystemColors.ControlLight;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(727, 646);
-            button1.Name = "button1";
-            button1.Padding = new Padding(20, 0, 0, 0);
-            button1.Size = new Size(268, 39);
-            button1.TabIndex = 30;
-            button1.Text = "Imprimir cotización";
-            button1.UseVisualStyleBackColor = false;
+            btnVer.BackColor = Color.FromArgb(7, 111, 178);
+            btnVer.Enabled = false;
+            btnVer.FlatStyle = FlatStyle.Popup;
+            btnVer.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic);
+            btnVer.ForeColor = SystemColors.ControlLight;
+            btnVer.Image = Properties.Resources.ver;
+            btnVer.ImageAlign = ContentAlignment.MiddleLeft;
+            btnVer.Location = new Point(744, 646);
+            btnVer.Name = "btnVer";
+            btnVer.Padding = new Padding(15, 0, 0, 0);
+            btnVer.Size = new Size(268, 39);
+            btnVer.TabIndex = 30;
+            btnVer.Text = "Ensambles Generados";
+            btnVer.UseVisualStyleBackColor = false;
+            btnVer.Click += btnVerSiguiente_Click;
             // 
             // GeneradorEnsambles
             // 
@@ -919,7 +863,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(11, 33, 50);
             ClientSize = new Size(1153, 697);
-            Controls.Add(button1);
+            Controls.Add(btnVer);
             Controls.Add(groupBox4);
             Controls.Add(btnEnsamble);
             Controls.Add(cbEspecificar);
@@ -937,22 +881,30 @@
             groupBox2.PerformLayout();
             gbComponentes.ResumeLayout(false);
             gbComponentes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvComponentes).EndInit();
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -972,30 +924,10 @@
         private Label label4;
         private TextBox txtMaximo;
         private PictureBox pbTiposEnsambles;
-        private ComboBox comboBox3;
-        private Label label7;
-        private ComboBox comboBox2;
-        private Label label6;
-        private ComboBox comboBox1;
+        private ComboBox cbComponentes;
         private Label label5;
-        private CheckBox checkBox7;
-        private CheckBox checkBox6;
-        private CheckBox checkBox5;
-        private CheckBox checkBox4;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
-        private ComboBox comboBox4;
-        private Label label8;
-        private ComboBox comboBox5;
-        private Label label9;
-        private ComboBox comboBox6;
-        private Label label10;
-        private CheckBox checkBox8;
-        private ComboBox comboBox7;
-        private Label label11;
         private GroupBox groupBox4;
         private Label label12;
-        private Button button1;
         private Panel panel1;
         private Label DESC1;
         private Label ID1;
@@ -1027,5 +959,17 @@
         private Label lblPrecio;
         private Label lblPrecioT;
         private Label Count;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox7;
+        private PictureBox pictureBox6;
+        private Button btnVer;
+        private DataGridView dgvComponentes;
+        private Button btnAgregar;
+        private Label lblAdicional;
+        private Label lblAdicionalT;
     }
 }

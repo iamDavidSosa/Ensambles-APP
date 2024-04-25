@@ -102,6 +102,7 @@
             pbTiposEnsambles.SizeMode = PictureBoxSizeMode.StretchImage;
             pbTiposEnsambles.TabIndex = 28;
             pbTiposEnsambles.TabStop = false;
+            pbTiposEnsambles.Click += pbTiposEnsambles_Click;
             // 
             // cbCaracteristica1
             // 
@@ -170,7 +171,6 @@
             // txtHasta
             // 
             txtHasta.BackColor = Color.FromArgb(13, 50, 76);
-            txtHasta.BorderStyle = BorderStyle.None;
             txtHasta.Font = new Font("Segoe UI", 10.8F);
             txtHasta.ForeColor = Color.WhiteSmoke;
             txtHasta.Location = new Point(310, 55);
@@ -178,11 +178,11 @@
             txtHasta.Name = "txtHasta";
             txtHasta.Size = new Size(268, 29);
             txtHasta.TabIndex = 38;
+            txtHasta.KeyPress += txtHasta_KeyPress;
             // 
             // txtDesde
             // 
             txtDesde.BackColor = Color.FromArgb(13, 50, 76);
-            txtDesde.BorderStyle = BorderStyle.None;
             txtDesde.Font = new Font("Segoe UI", 10.8F);
             txtDesde.ForeColor = Color.WhiteSmoke;
             txtDesde.Location = new Point(21, 55);
@@ -190,6 +190,7 @@
             txtDesde.Name = "txtDesde";
             txtDesde.Size = new Size(268, 29);
             txtDesde.TabIndex = 37;
+            txtDesde.KeyPress += txtDesde_KeyPress;
             // 
             // label4
             // 
@@ -294,7 +295,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(11, 33, 50);
+            BackColor = Color.FromArgb(15, 46, 70);
             ClientSize = new Size(997, 540);
             Controls.Add(btnEliminar);
             Controls.Add(groupBox2);

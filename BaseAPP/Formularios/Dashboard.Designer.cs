@@ -65,7 +65,7 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(20, 42);
+            panel1.Location = new Point(35, 42);
             panel1.Name = "panel1";
             panel1.Size = new Size(314, 90);
             panel1.TabIndex = 0;
@@ -108,7 +108,7 @@
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(pictureBox2);
-            panel2.Location = new Point(356, 42);
+            panel2.Location = new Point(371, 42);
             panel2.Name = "panel2";
             panel2.Size = new Size(314, 90);
             panel2.TabIndex = 8;
@@ -151,7 +151,7 @@
             panel3.Controls.Add(label5);
             panel3.Controls.Add(label6);
             panel3.Controls.Add(pictureBox3);
-            panel3.Location = new Point(692, 42);
+            panel3.Location = new Point(707, 42);
             panel3.Name = "panel3";
             panel3.Size = new Size(314, 90);
             panel3.TabIndex = 8;
@@ -193,7 +193,7 @@
             panel4.BackColor = Color.FromArgb(13, 50, 76);
             panel4.Controls.Add(pictureBox4);
             panel4.Controls.Add(label7);
-            panel4.Location = new Point(20, 153);
+            panel4.Location = new Point(35, 153);
             panel4.Name = "panel4";
             panel4.Size = new Size(486, 417);
             panel4.TabIndex = 9;
@@ -224,7 +224,7 @@
             panel5.BackColor = Color.FromArgb(13, 50, 76);
             panel5.Controls.Add(pictureBox5);
             panel5.Controls.Add(label8);
-            panel5.Location = new Point(530, 153);
+            panel5.Location = new Point(545, 153);
             panel5.Name = "panel5";
             panel5.Size = new Size(476, 417);
             panel5.TabIndex = 10;

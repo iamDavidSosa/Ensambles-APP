@@ -176,5 +176,77 @@ namespace CapaDatos
             conexion.CerrarConexion();
             return tabla;
         }
+
+        public DataTable RetornarComponentesAdicionales()
+        {
+            comando.Parameters.Clear();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "RetornarComponentesAdicionales";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            comando.Parameters.Clear();
+            tabla.Load(leer);
+            conexion.CerrarConexion();
+            return tabla;
+        }
+
+        public DataTable MostrarComponentesAdicionales()
+        {
+            comando.Parameters.Clear();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "MostrarComponentesAdicionales";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            comando.Parameters.Clear();
+            tabla.Load(leer);
+            conexion.CerrarConexion();
+            return tabla;
+        }
+
+        public void AgregarComponenteAdicional(Int32 id_componente_adicional)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "AgregarComponenteAdicional";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id_componente_adicional", id_componente_adicional);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+
+        }
+
+        public void EliminarComponenteAdicional(Int32 id_componente_adicional)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "EliminaComponenteAdicional";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id_componente_adicional", id_componente_adicional);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+        }
+
+        public void LimpiarComponentesElegidos()
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "LimpiaComponentesElegidos";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+        }
+
+        public DataTable RetornarPrecioAdicional()
+        {
+            comando.Parameters.Clear();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "RetornarPrecioAdicional";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            comando.Parameters.Clear();
+            tabla.Load(leer);
+            conexion.CerrarConexion();
+            return tabla;
+        }
     }
 }
