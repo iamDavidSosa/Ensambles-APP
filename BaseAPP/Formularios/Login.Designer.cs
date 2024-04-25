@@ -44,7 +44,7 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.FromArgb(13, 50, 76);
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.GPU;
             pictureBox1.Location = new Point(-3, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(460, 456);
@@ -69,22 +69,22 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Gainsboro;
-            label2.Location = new Point(489, 69);
+            label2.Location = new Point(497, 70);
             label2.Name = "label2";
-            label2.Size = new Size(254, 38);
+            label2.Size = new Size(239, 38);
             label2.TabIndex = 5;
-            label2.Text = "INICIO DE SESIÓN";
+            label2.Text = "ENSAMBLES APP";
             // 
             // txt_usuario
             // 
             txt_usuario.BackColor = SystemColors.InactiveCaption;
             txt_usuario.BorderStyle = BorderStyle.None;
-            txt_usuario.Font = new Font("Segoe UI", 12F);
+            txt_usuario.Font = new Font("Segoe UI", 10.8F);
             txt_usuario.ForeColor = Color.Black;
             txt_usuario.Location = new Point(489, 168);
             txt_usuario.Margin = new Padding(3, 3, 10, 3);
             txt_usuario.Name = "txt_usuario";
-            txt_usuario.Size = new Size(258, 27);
+            txt_usuario.Size = new Size(258, 24);
             txt_usuario.TabIndex = 6;
             // 
             // label7
@@ -114,12 +114,12 @@
             // 
             txt_clave.BackColor = SystemColors.InactiveCaption;
             txt_clave.BorderStyle = BorderStyle.None;
-            txt_clave.Font = new Font("Segoe UI", 12F);
+            txt_clave.Font = new Font("Segoe UI", 10.8F);
             txt_clave.ForeColor = Color.Black;
             txt_clave.Location = new Point(489, 252);
             txt_clave.Margin = new Padding(3, 3, 10, 3);
             txt_clave.Name = "txt_clave";
-            txt_clave.Size = new Size(258, 27);
+            txt_clave.Size = new Size(258, 24);
             txt_clave.TabIndex = 10;
             txt_clave.UseSystemPasswordChar = true;
             // 
@@ -130,9 +130,9 @@
             btnEnter.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btnEnter.Image = (Image)resources.GetObject("btnEnter.Image");
             btnEnter.ImageAlign = ContentAlignment.MiddleRight;
-            btnEnter.Location = new Point(542, 347);
+            btnEnter.Location = new Point(526, 341);
             btnEnter.Name = "btnEnter";
-            btnEnter.Size = new Size(146, 37);
+            btnEnter.Size = new Size(182, 42);
             btnEnter.TabIndex = 12;
             btnEnter.Text = "ENTER";
             btnEnter.UseVisualStyleBackColor = false;

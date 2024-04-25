@@ -172,7 +172,7 @@
             btnComponentes.FlatStyle = FlatStyle.Flat;
             btnComponentes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnComponentes.ForeColor = Color.LightGray;
-            btnComponentes.Image = (Image)resources.GetObject("btnComponentes.Image");
+            btnComponentes.Image = Properties.Resources.gpu21;
             btnComponentes.ImageAlign = ContentAlignment.MiddleRight;
             btnComponentes.Location = new Point(0, 357);
             btnComponentes.Name = "btnComponentes";
@@ -192,7 +192,7 @@
             btnReglas.FlatStyle = FlatStyle.Flat;
             btnReglas.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReglas.ForeColor = Color.LightGray;
-            btnReglas.Image = (Image)resources.GetObject("btnReglas.Image");
+            btnReglas.Image = Properties.Resources.contabilidad1;
             btnReglas.ImageAlign = ContentAlignment.MiddleRight;
             btnReglas.Location = new Point(0, 297);
             btnReglas.Name = "btnReglas";
@@ -212,7 +212,7 @@
             btnEnsambles.FlatStyle = FlatStyle.Flat;
             btnEnsambles.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEnsambles.ForeColor = Color.LightGray;
-            btnEnsambles.Image = (Image)resources.GetObject("btnEnsambles.Image");
+            btnEnsambles.Image = Properties.Resources.built;
             btnEnsambles.ImageAlign = ContentAlignment.MiddleRight;
             btnEnsambles.Location = new Point(0, 237);
             btnEnsambles.Name = "btnEnsambles";
@@ -251,7 +251,7 @@
             btnDashboard.FlatStyle = FlatStyle.Flat;
             btnDashboard.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDashboard.ForeColor = Color.LightGray;
-            btnDashboard.Image = (Image)resources.GetObject("btnDashboard.Image");
+            btnDashboard.Image = Properties.Resources.dashboard;
             btnDashboard.ImageAlign = ContentAlignment.MiddleRight;
             btnDashboard.Location = new Point(0, 117);
             btnDashboard.Name = "btnDashboard";
