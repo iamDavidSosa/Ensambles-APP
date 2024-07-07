@@ -1,2 +1,2 @@
 # EnsamblesAPP
-Proyecto Ensambles para asignatura Ingeniería en Software I
+Proyecto Ensambles APP para asignatura Ingeniería en Software I
