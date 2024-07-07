@@ -1,2 +1,2 @@
-# BaseAPP
-Proyecto base para sistema a trabajar en Ingeniería en Software I
+# EnsamblesAPP
+Proyecto Ensambles para asignatura Ingeniería en Software I
